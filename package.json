@@ -26,7 +26,10 @@
     "tsc": "npm run clean && npm run tsc-build",
     "tsc-build": "tsc --project tsconfig.build.json"
   },
-  "dependencies": {},
+  "dependencies": {
+    "openchemlib": "^9.8.0",
+    "openchemlib-utils": "^8.3.1"
+  },
   "devDependencies": {
     "@types/node": "^24.5.0",
     "@vitest/coverage-v8": "^3.2.4",
