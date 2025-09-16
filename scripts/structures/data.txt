@@ -1,0 +1,78 @@
+Abbreviation	Short Name	Systematic name	CID	InChIKey	SMILES	SID
+4eLeg	4-epi-Legionaminic acid	5,7-Diamino-3,5,7,9-tetradeoxy-D-glycero-D-talo-non-2-ulopyranosonic acid	126961780	ZFZFJUIKYIVPNP-HFIPJBPGSA-N	C[C@H]([C@H]([C@H]1[C@@H]([C@@H](C[C@](O1)(C(=O)O)O)O)N)N)O	252089092
+6dAlt	6-Deoxy-L-altrose	6-Deoxy-L-altropyranose	12302958	SHZGCJCMOBCMKK-VSOAQEOCSA-N	C[C@H]1[C@@H]([C@@H]([C@H](C(O1)O)O)O)O	252300980
+6dAltNAc	N-Acetyl-6-deoxy-L-altrosamine	2-Acetamido-2,6-dideoxy-L-altropyranose	126961777	XOCCAGJZGBCJME-QALBOBFASA-N	C[C@H]1[C@@H]([C@@H]([C@H](C(O1)O)NC(=O)C)O)O	336286661
+6dGul	6-Deoxy-D-gulose	6-Deoxy-D-gulopyranose	12302960	SHZGCJCMOBCMKK-CBPJZXOFSA-N	C[C@@H]1[C@@H]([C@H]([C@H](C(O1)O)O)O)O	336286660
+6dTal	6-Deoxy-D-talose	6-Deoxy-D-talopyranose	44119431	SHZGCJCMOBCMKK-WHZQZERISA-N	C[C@@H]1[C@@H]([C@@H]([C@@H](C(O1)O)O)O)O	252301016
+6dTalNAc	N-Acetyl-6-deoxy-D-talosamine	2-Acetamido-2,6-dideoxy-D-talopyranose	126961778	XOCCAGJZGBCJME-SUVUXTLLSA-N	C[C@@H]1[C@@H]([C@@H]([C@@H](C(O1)O)NC(=O)C)O)O	336286662
+8eAci	8-epi-Acinetaminic acid	5,7-Diamino-3,5,7,9-tetradeoxy-D-glycero-L-altro-non-2-ulopyranosonic acid	168009119	ZFZFJUIKYIVPNP-DUTNRDNDSA-N	C[C@H]([C@@H]([C@H]1[C@@H]([C@H](C[C@](O1)(C(=O)O)O)O)N)N)O	480493268
+8eLeg	8-epi-Legionaminic acid	5,7-Diamino-3,5,7,9-tetradeoxy-L-glycero-D-galacto-non-2-ulopyranosonic acid	168009112	ZFZFJUIKYIVPNP-UMDIDJOMSA-N	C[C@@H]([C@H]([C@H]1[C@@H]([C@H](C[C@](O1)(C(=O)O)O)O)N)N)O	252090150
+Abe	Abequose	3,6-Dideoxy-D-xylo-hexopyranose	160540	KYPWIZMAJMNPMJ-JDJSBBGDSA-N	C[C@@H]1[C@@H](C[C@H](C(O1)O)O)O	252091216
+Aci	Acinetaminic acid	5,7-Diamino-3,5,7,9-tetradeoxy-L-glycero-L-altro-non-2-ulopyranosonic acid	126961779	ZFZFJUIKYIVPNP-ZDMURPDRSA-N	C[C@@H]([C@@H]([C@H]1[C@@H]([C@H](C[C@](O1)(C(=O)O)O)O)N)N)O	252089094
+All	D-Allose	D-Allopyranose	439507	WQZGKKKJIJFFOK-IVMDWMLBSA-N	C([C@@H]1[C@H]([C@H]([C@H](C(O1)O)O)O)O)O	251973843
+AllA	D-Alluronic acid	D-Allopyranuronic acid	6602103	AEMOLEFTQBMNLQ-PKKLWIBTSA-N	[C@H]1([C@@H]([C@H](OC([C@@H]1O)O)C(=O)O)O)O	251973908
+AllN	D-Allosamine	2-Amino-2-deoxy-D-allopyranose	6915732	MSWZFWKMSRAUBD-RSVSWTKNSA-N	C([C@@H]1[C@H]([C@H]([C@H](C(O1)O)N)O)O)O	251973859
+AllNAc	N-Acetyl-D-allosamine	2-Acetamido-2-deoxy-D-allopyranose	10944029	OVRNDRQMDRJTHS-IYWGXSQHSA-N	CC(=O)N[C@@H]1[C@@H]([C@@H]([C@H](OC1O)CO)O)O	251973851
+Alt	L-Altrose	L-Altropyranose	10219674	WQZGKKKJIJFFOK-VSOAQEOCSA-N	C([C@H]1[C@@H]([C@@H]([C@H](C(O1)O)O)O)O)O	251973845
+AltA	L-Altruronic acid	L-Altropyranuronic acid	56845780	AEMOLEFTQBMNLQ-DOTFUZMJSA-N	[C@@H]1([C@H]([C@@H](OC([C@@H]1O)O)C(=O)O)O)O	252300979
+AltN	L-Altrosamine	2-Amino-2-deoxy-L-altropyranose	6602094	MSWZFWKMSRAUBD-ZNVMLXAYSA-N	C([C@H]1[C@@H]([C@@H]([C@H](C(O1)O)N)O)O)O	251973836
+AltNAc	N-Acetyl-L-altrosamine	2-Acetamido-2-deoxy-L-altropyranose	44717159	OVRNDRQMDRJTHS-QCSUWOBZSA-N	CC(=O)N[C@@H]1[C@H]([C@H]([C@@H](OC1O)CO)O)O	251973853
+Api	L-Apiose	3-C-(Hydroxymethyl)-L-erythro-tetrofuranose	12306753	ASNHGEVAWNWCRQ-LJJLCWGRSA-N	C1[C@@]([C@H](C(O1)O)O)(CO)O	252106892
+Ara	L-Arabinose	L-Arabinopyranose	439195	SRBFZHDQGSBBOR-HWQSCIPKSA-N	C1[C@@H]([C@@H]([C@H](C(O1)O)O)O)O	252089084
+Bac	Bacillosamine	2,4-Diamino-2,4,6-trideoxy-D-glucopyranose	54029194	LEJHBBPEPOZERQ-RSVSWTKNSA-N	C[C@@H]1[C@H]([C@@H]([C@H](C(O1)O)N)O)N	252091138
+Col	Colitose	3,6-Dideoxy-L-xylo-hexopyranose	12303780	KYPWIZMAJMNPMJ-NNXAEHONSA-N	C[C@H]1[C@H](C[C@@H](C(O1)O)O)O	252091214
+DDmanHep	D-glycero-D-manno-Heptose	D-glycero-D-manno-Heptopyranose	53681436	BGWQRWREUZVRGI-NNPWBXLPSA-N	C([C@H]([C@@H]1[C@H]([C@@H]([C@@H](C(O1)O)O)O)O)O)O	252301021
+Dha	3-Deoxy-D-lyxo-heptulosaric acid	3-Deoxy-D-lyxo-hept-2-ulopyranosaric acid	15608515	ZJDMTWUYUXJUEE-BMJXUZCVSA-N	C1[C@H]([C@H]([C@H](OC1(C(=O)O)O)C(=O)O)O)O	252090263
+Dig	D-Digitoxose	2,6-Dideoxy-D-ribo-hexopyranose	2723626	FDWRIIDFYSUTDP-WGDKFINWSA-N	C[C@@H]1[C@H]([C@H](CC(O1)O)O)O	252301018
+Fru	D-Fructose	D-arabino-Hex-2-ulopyranose	2723872	LKDRXBCSQODPBY-VRPWFDPXSA-N	C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O	252106896
+Fuc	L-Fucose	6-Deoxy-L-galactopyranose	17106	SHZGCJCMOBCMKK-DHVFOXMCSA-N	C[C@H]1[C@H]([C@H]([C@@H](C(O1)O)O)O)O	251973912
+FucNAc	N-Acetyl-L-fucosamine	2-Acetamido-2,6-dideoxy-L-galactopyranose	91810489	XOCCAGJZGBCJME-VAYLDTTESA-N	C[C@H]1[C@H]([C@H]([C@@H](C(O1)O)NC(=O)C)O)O	252089082
+Gal	D-Galactose	D-Galactopyranose	6036	WQZGKKKJIJFFOK-SVZMEOIVSA-N	C([C@@H]1[C@@H]([C@@H]([C@H](C(O1)O)O)O)O)O	251973840
+GalA	D-Galacturonic acid	D-Galactopyranuronic acid	439215	AEMOLEFTQBMNLQ-YMDCURPLSA-N	[C@@H]1([C@H]([C@H](OC([C@@H]1O)O)C(=O)O)O)O	251973905
+GalN	D-Galactosamine	2-Amino-2-deoxy-D-galactopyranose	24154	MSWZFWKMSRAUBD-GASJEMHNSA-N	C([C@@H]1[C@@H]([C@@H]([C@H](C(O1)O)N)O)O)O	251973856
+GalNAc	N-Acetyl-D-galactosamine	2-Acetamido-2-deoxy-D-galactopyranose	35717	OVRNDRQMDRJTHS-KEWYIRBNSA-N	CC(=O)N[C@@H]1[C@H]([C@H]([C@H](OC1O)CO)O)O	251973848
+Glc	D-Glucose	D-Glucopyranose	5793	WQZGKKKJIJFFOK-GASJEMHNSA-N	C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O	251973837
+GlcA	D-Glucuronic acid	D-Glucopyranuronic acid	94715	AEMOLEFTQBMNLQ-AQKNRBDQSA-N	[C@@H]1([C@@H]([C@H](OC([C@@H]1O)O)C(=O)O)O)O	251973835
+GlcN	D-Glucosamine	2-Amino-2-deoxy-D-glucopyranose	439213	MSWZFWKMSRAUBD-IVMDWMLBSA-N	C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)N)O)O)O	251973854
+GlcNAc	N-Acetyl-D-glucosamine	2-Acetamido-2-deoxy-D-glucopyranose	439174	OVRNDRQMDRJTHS-RTRLPJTCSA-N	CC(=O)N[C@@H]1[C@H]([C@@H]([C@H](OC1O)CO)O)O	251973846
+Gul	D-Gulose	D-Gulopyranose	441033	WQZGKKKJIJFFOK-CBPJZXOFSA-N	C([C@@H]1[C@@H]([C@H]([C@H](C(O1)O)O)O)O)O	251973842
+GulA	D-Guluronic acid	D-Gulopyranuronic acid	11788788	AEMOLEFTQBMNLQ-BZINKQHNSA-N	[C@H]1([C@H]([C@H](OC([C@@H]1O)O)C(=O)O)O)O	251973907
+GulN	D-Gulosamine	2-Amino-2-deoxy-D-gulopyranose	9920528	MSWZFWKMSRAUBD-QTVWNMPRSA-N	C([C@@H]1[C@@H]([C@H]([C@H](C(O1)O)N)O)O)O	251973858
+GulNAc	N-Acetyl-D-gulosamine	2-Acetamido-2-deoxy-D-gulopyranose	13201633	OVRNDRQMDRJTHS-WZPXOXCRSA-N	CC(=O)N[C@@H]1[C@@H]([C@H]([C@H](OC1O)CO)O)O	251973850
+Ido	L-Idose	L-Idopyranose	11030410	WQZGKKKJIJFFOK-ZNVMLXAYSA-N	C([C@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O	251973844
+IdoA	L-Iduronic acid	L-Idopyranuronic acid	441039	AEMOLEFTQBMNLQ-HNFCZKTMSA-N	[C@@H]1([C@@H]([C@@H](OC([C@@H]1O)O)C(=O)O)O)O	251973909
+IdoN	L-Idosamine	2-Amino-2-deoxy-L-idopyranose	91864695	MSWZFWKMSRAUBD-CGDLOXFJSA-N	C([C@H]1[C@H]([C@@H]([C@H](C(O1)O)N)O)O)O	251973839
+IdoNAc	N-Acetyl-L-idosamine	2-Acetamido-2-deoxy-L-idopyranose	13201636	OVRNDRQMDRJTHS-IQMFPIFPSA-N	CC(=O)N[C@@H]1[C@H]([C@@H]([C@@H](OC1O)CO)O)O	251973852
+Kdn	2-Keto-3-deoxy-nononic acid	3-Deoxy-D-glycero-D-galacto-non-2-ulopyranosonic acid	13991616	CLRLHXKNIYJWAW-QBTAGHCHSA-N	C1[C@@H]([C@H]([C@@H](OC1(C(=O)O)O)[C@@H]([C@@H](CO)O)O)O)O	252089089
+Kdo	3-Deoxy-D-manno-octulosonic acid	3-Deoxy-D-manno-oct-2-ulopyranosonic acid	10857507	NNLZBVFSCVTSLA-XMABDTGBSA-N	C1[C@H]([C@H]([C@H](OC1(C(=O)O)O)[C@@H](CO)O)O)O	252090262
+Leg	Legionaminic acid	5,7-Diamino-3,5,7,9-tetradeoxy-D-glycero-D-galacto-non-2-ulopyranosonic acid	70678967	ZFZFJUIKYIVPNP-OWTNSLFHSA-N	C[C@H]([C@H]([C@H]1[C@@H]([C@H](C[C@](O1)(C(=O)O)O)O)N)N)O	252089090
+LDmanHep	L-glycero-D-manno-Heptose	L-glycero-D-manno-Heptopyranose	21120522	BGWQRWREUZVRGI-OLLRPPRZSA-N	C([C@@H]([C@@H]1[C@H]([C@@H]([C@@H](C(O1)O)O)O)O)O)O	252301020
+Lyx	D-Lyxose	D-Lyxopyranose	439240	SRBFZHDQGSBBOR-AGQMPKSLSA-N	C1[C@H]([C@@H]([C@@H](C(O1)O)O)O)O	252089085
+Man	D-Mannose	D-Mannopyranose	18950	WQZGKKKJIJFFOK-QTVWNMPRSA-N	C([C@@H]1[C@H]([C@@H]([C@@H](C(O1)O)O)O)O)O	251973838
+ManA	D-Mannuronic acid	D-Mannopyranuronic acid	439630	AEMOLEFTQBMNLQ-VANFPWTGSA-N	[C@@H]1([C@@H]([C@H](OC([C@H]1O)O)C(=O)O)O)O	251973904
+ManN	D-Mannosamine	2-Amino-2-deoxy-D-mannopyranose	440049	MSWZFWKMSRAUBD-CBPJZXOFSA-N	C([C@@H]1[C@H]([C@@H]([C@@H](C(O1)O)N)O)O)O	251973855
+ManNAc	N-Acetyl-D-mannosamine	2-Acetamido-2-deoxy-D-mannopyranose	439281	OVRNDRQMDRJTHS-ZTVVOAFPSA-N	CC(=O)N[C@H]1[C@H]([C@@H]([C@H](OC1O)CO)O)O	251973847
+Mur	Muramic acid	2-Amino-3-O-[(R)-1-carboxyethyl]-2-deoxy-D-glucopyranose	441038	MSFSPUZXLOGKHJ-PGYHGBPZSA-N	C[C@H](C(=O)O)O[C@H]1[C@@H]([C@H](OC([C@@H]1N)O)CO)O	252301022
+MurNAc	N-Acetylmuramic acid	2-Acetamido-3-O-[(R)-1-carboxyethyl]-2-deoxy-D-glucopyranose	5462244	MNLRQHMNZILYPY-MKFCKLDKSA-N	C[C@H](C(=O)O)O[C@H]1[C@@H]([C@H](OC([C@@H]1NC(=O)C)O)CO)O	252091139
+MurNGc	N-Glycolylmuramic acid	3-O-[(R)-1-Carboxyethyl]-2-deoxy-2-hydroxyacetamido-D-glucopyranose	91810748	CLMZMILVSHKNLI-HONWWXKESA-N	C[C@H](C(=O)O)O[C@H]1[C@@H]([C@H](OC([C@@H]1NC(=O)CO)O)CO)O	252090151
+Neu	Neuraminic acid	5-Amino-3,5-dideoxy-D-glycero-D-galacto-non-2-ulopyranosonic acid	441037	CERZMXAJYMMUDR-QBTAGHCHSA-N	C1[C@@H]([C@H]([C@@H](OC1(C(=O)O)O)[C@@H]([C@@H](CO)O)O)N)O	252301019
+Neu5Ac	N-Acetylneuraminic acid	5-Acetamido-3,5-dideoxy-D-glycero-D-galacto-non-2-ulopyranosonic acid	439197	SQVRNKJHWKZAKO-LUWBGTNYSA-N	CC(=O)N[C@@H]1[C@H](CC(O[C@H]1[C@@H]([C@@H](CO)O)O)(C(=O)O)O)O	252089093
+Neu5Gc	N-Glycolylneuraminic acid	3,5-Dideoxy-5-hydroxyacetamido-D-glycero-D-galacto-non-2-ulopyranosonic acid	440001	FDJKUWYYUZCUJX-PGIATKPXSA-N	C1[C@@H]([C@H]([C@@H](OC1(C(=O)O)O)[C@@H]([C@@H](CO)O)O)NC(=O)CO)O	252089091
+Oli	Olivose	2,6-Dideoxy-D-arabino-hexopyranose	10888063	FDWRIIDFYSUTDP-DUVQVXGLSA-N	C[C@@H]1[C@H]([C@@H](CC(O1)O)O)O	252301017
+Par	Paratose	3,6-Dideoxy-D-ribo-hexopyranose	12303783	KYPWIZMAJMNPMJ-IANNHFEVSA-N	C[C@@H]1[C@H](C[C@H](C(O1)O)O)O	252106894
+Pse	Pseudaminic acid	5,7-Diamino-3,5,7,9-tetradeoxy-L-glycero-L-manno-non-2-ulopyranosonic acid	101137651	ZFZFJUIKYIVPNP-YXGHPGITSA-N	C[C@@H]([C@@H]([C@H]1[C@H]([C@H](C[C@](O1)(C(=O)O)O)O)N)N)O	252089088
+Psi	D-Psicose	D-ribo-Hex-2-ulopyranose	441036	LKDRXBCSQODPBY-JDJSBBGDSA-N	C1[C@H]([C@H]([C@H](C(O1)(CO)O)O)O)O	252106897
+Qui	D-Quinovose	6-Deoxy-D-glucopyranose	439746	SHZGCJCMOBCMKK-GASJEMHNSA-N	C[C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O	251973910
+QuiNAc	N-Acetyl-D-quinovosamine	2-Acetamido-2,6-dideoxy-D-glucopyranose	11954187	XOCCAGJZGBCJME-ZQLGFOCFSA-N	C[C@@H]1[C@H]([C@@H]([C@H](C(O1)O)NC(=O)C)O)O	251973913
+Rha	L-Rhamnose	6-Deoxy-L-mannopyranose	25310	SHZGCJCMOBCMKK-JFNONXLTSA-N	C[C@H]1[C@@H]([C@H]([C@H](C(O1)O)O)O)O	251973911
+RhaNAc	N-Acetyl-L-rhamnosamine	2-Acetamido-2,6-dideoxy-L-mannopyranose	91807222	XOCCAGJZGBCJME-DYYUQQNFSA-N	C[C@H]1[C@@H]([C@H]([C@H](C(O1)O)NC(=O)C)O)O	251973914
+Rib	D-Ribose	D-Ribopyranose	10975657	SRBFZHDQGSBBOR-SOOFDHNKSA-N	C1[C@H]([C@H]([C@H](C(O1)O)O)O)O	252089083
+Sia	Sialic acid	Sialic acid residue of unspecified type				341861327
+Sor	L-Sorbose	L-xylo-Hex-2-ulopyranose	439192	LKDRXBCSQODPBY-AMVSKUEXSA-N	C1[C@@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O	252091215
+Tag	D-Tagatose	D-lyxo-Hex-2-ulopyranose	439312	LKDRXBCSQODPBY-OEXCPVAWSA-N	C1[C@H]([C@@H]([C@@H](C(O1)(CO)O)O)O)O	252106895
+Tal	D-Talose	D-Talopyranose	441035	WQZGKKKJIJFFOK-WHZQZERISA-N	C([C@@H]1[C@@H]([C@@H]([C@@H](C(O1)O)O)O)O)O	251973841
+TalA	D-Taluronic acid	D-Talopyranuronic acid	11298488	AEMOLEFTQBMNLQ-IRPUOWHDSA-N	[C@@H]1([C@H]([C@H](OC([C@H]1O)O)C(=O)O)O)O	251973906
+TalN	D-Talosamine	2-Amino-2-deoxy-D-talopyranose	9834117	MSWZFWKMSRAUBD-SVZMEOIVSA-N	C([C@@H]1[C@@H]([C@@H]([C@@H](C(O1)O)N)O)O)O	251973857
+TalNAc	N-Acetyl-D-talosamine	2-Acetamido-2-deoxy-D-talopyranose	57376616	OVRNDRQMDRJTHS-XLSKCSLXSA-N	CC(=O)N[C@H]1[C@H]([C@H]([C@H](OC1O)CO)O)O	251973849
+Tyv	Tyvelose	3,6-Dideoxy-D-arabino-hexopyranose	12303782	KYPWIZMAJMNPMJ-OEXCPVAWSA-N	C[C@@H]1[C@H](C[C@@H](C(O1)O)O)O	252106893
+Xyl	D-Xylose	D-Xylopyranose	135191	SRBFZHDQGSBBOR-IOVATXLUSA-N	C1[C@H]([C@@H]([C@H](C(O1)O)O)O)O	252089086
