@@ -1,0 +1,71 @@
+{
+  "spectrumId": 1234807,
+  "url": "https://chemdata.nist.gov/glycan/spectra/1234807",
+  "titleBlock": "Blood Group A Tetrasaccharide, m/z 692.2608\n\nHi-Res CC 41V\n\nMS2, [M+H]+",
+  "name": "Blood Group A Tetrasaccharide",
+  "synonyms": [
+    "Glycan Blood Group A Tetrasaccharide",
+    "Glycan MC=h2n1f1",
+    "GalNAcα1-3(Fucα1-2)Galβ1-4Glc",
+    "Blood Group A Type II tetrasaccharide"
+  ],
+  "peaks": [
+    {
+      "mz": "126.0548",
+      "abundance": "598.6"
+    },
+    {
+      "mz": "138.0548",
+      "abundance": "124.28"
+    },
+    {
+      "mz": "144.0653",
+      "abundance": "139.76"
+    },
+    {
+      "mz": "168.0653",
+      "abundance": "73.73"
+    },
+    {
+      "mz": "186.0759",
+      "abundance": "408.09"
+    },
+    {
+      "mz": "204.0865",
+      "abundance": "999"
+    }
+  ],
+  "svgUrl": "https://chemdata.nist.gov/glycan-backend/assets/images/structures/Gly-140-CFG.svg",
+  "metadata": {
+    "Name": "Blood Group A Tetrasaccharide",
+    "Type": "MS2",
+    "Precursor Ion": "[M+H]+",
+    "Precursor m/z": "692.2608",
+    "Charge": "1",
+    "Exact Mass": "691.253494",
+    "Molecular Formula": "C26H45NO20",
+    "Derivatization": "Underivatized",
+    "Ionization": "ESI",
+    "Collision Energy": "41V",
+    "Instrument Type": "Hi-Res CC",
+    "MS Instrument": "Thermo Finnigan Elite Orbitrap",
+    "Sample Inlet": "direct flow injection",
+    "Ionization Mode": "P",
+    "synonyms": [
+      "Glycan Blood Group A Tetrasaccharide",
+      "Glycan MC=h2n1f1",
+      "GalNAcα1-3(Fucα1-2)Galβ1-4Glc",
+      "Blood Group A Type II tetrasaccharide"
+    ],
+    "CAS No.": "59957925",
+    "NIST No.": "1234807",
+    "Notes": [
+      "Consensus spectrum",
+      "\"Carbosynth OB03872 (Source: Human urine, Purity: min 90% by 1H-NMR)",
+      "Type Milk Oligosaccharide\"",
+      "Vial_ID=Gly_140",
+      "mz_diff=0.0005",
+      "Nreps=25/25"
+    ]
+  }
+}

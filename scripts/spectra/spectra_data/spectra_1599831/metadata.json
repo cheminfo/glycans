@@ -1,0 +1,83 @@
+{
+  "spectrumId": 1599831,
+  "url": "https://chemdata.nist.gov/glycan/spectra/1599831",
+  "titleBlock": "Lacto-N-triaose, m/z 546.20286\n\nHi-Res CC 32V\n\nMS2, [M+H]+",
+  "name": "Lacto-N-triaose",
+  "synonyms": [
+    "Glycan Lacto-N-triaose",
+    "Glycan MC=h2n1",
+    "GlcNAcβ1-3Galβ1-4Glc"
+  ],
+  "peaks": [
+    {
+      "mz": "84.044",
+      "abundance": "22.18"
+    },
+    {
+      "mz": "96.0441",
+      "abundance": "25.27"
+    },
+    {
+      "mz": "126.0545",
+      "abundance": "451.05"
+    },
+    {
+      "mz": "138.0545",
+      "abundance": "356.64"
+    },
+    {
+      "mz": "144.0651",
+      "abundance": "108.29"
+    },
+    {
+      "mz": "162.0755",
+      "abundance": "24.48"
+    },
+    {
+      "mz": "168.0651",
+      "abundance": "181.32"
+    },
+    {
+      "mz": "186.0755",
+      "abundance": "281.02"
+    },
+    {
+      "mz": "204.086",
+      "abundance": "999"
+    }
+  ],
+  "svgUrl": "https://chemdata.nist.gov/glycan-backend/assets/images/structures/Gly-132-CFG.svg",
+  "metadata": {
+    "Name": "Lacto-N-triaose",
+    "Type": "MS2",
+    "Precursor Ion": "[M+H]+",
+    "Precursor m/z": "546.20286",
+    "Charge": "1",
+    "Exact Mass": "545.195583",
+    "Molecular Formula": "C20H35NO16",
+    "Derivatization": "Underivatized",
+    "Ionization": "ESI",
+    "Collision Energy": "32V",
+    "Instrument Type": "Hi-Res CC",
+    "MS Instrument": "Thermo Finnigan Elite Orbitrap",
+    "Sample Inlet": "direct flow injection",
+    "Ionization Mode": "P",
+    "synonyms": [
+      "Glycan Lacto-N-triaose",
+      "Glycan MC=h2n1",
+      "GlcNAcβ1-3Galβ1-4Glc"
+    ],
+    "CAS No.": "75645271",
+    "NIST No.": "1599831",
+    "Notes": [
+      "Consensus spectrum",
+      "Nreps=19/22",
+      "Mz_diff=-5.5ppm",
+      "micromol/L in water/acetonitrile/formic acid (50/50/0.1)",
+      "\"Elicityl GLY011 (Source: Produced by bacterial fermentation, Purity: 98.73% by HPAEC surface peaks comparison)",
+      "Type Milk Oligosaccharide\"",
+      "Vial_ID=Gly_132",
+      "Glycan_2016_ID=10381"
+    ]
+  }
+}

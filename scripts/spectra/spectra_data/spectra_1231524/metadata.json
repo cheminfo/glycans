@@ -1,0 +1,157 @@
+{
+  "spectrumId": 1231524,
+  "url": "https://chemdata.nist.gov/glycan/spectra/1231524",
+  "titleBlock": "3'-Sialyl Lewis X-CH3, m/z 440.1451\n\nHi-Res CC 17V\n\nMS2, [M+2Na]2+",
+  "name": "3'-Sialyl Lewis X-CH3",
+  "synonyms": [
+    "Glycan 3'-Sialyl Lewis X-CH3",
+    "Glycan MC=h1n1f1a1-CH3",
+    "NeuAcα2-3Galβ1-4(Fucα1-3)GlcNAc-CH3",
+    "Sialyl Lewis X-α-methyl glycoside",
+    "3'-Sialyl-Lewis-X tetrasaccharide-CH3",
+    "3'-SLeX-CH3"
+  ],
+  "peaks": [
+    {
+      "mz": "73.0284",
+      "abundance": "3.6"
+    },
+    {
+      "mz": "75.0441",
+      "abundance": "148.75"
+    },
+    {
+      "mz": "85.0286",
+      "abundance": "23.78"
+    },
+    {
+      "mz": "169.0477",
+      "abundance": "45.65"
+    },
+    {
+      "mz": "211.0586",
+      "abundance": "27.07"
+    },
+    {
+      "mz": "226.0693",
+      "abundance": "16.98"
+    },
+    {
+      "mz": "270.0956",
+      "abundance": "5"
+    },
+    {
+      "mz": "272.0757",
+      "abundance": "3"
+    },
+    {
+      "mz": "296.0752",
+      "abundance": "30.27"
+    },
+    {
+      "mz": "314.0858",
+      "abundance": "928.17"
+    },
+    {
+      "mz": "336.0678",
+      "abundance": "56.14"
+    },
+    {
+      "mz": "351.1046",
+      "abundance": "13.09"
+    },
+    {
+      "mz": "366.6076",
+      "abundance": "6.29"
+    },
+    {
+      "mz": "367.1177",
+      "abundance": "600.4"
+    },
+    {
+      "mz": "367.6192",
+      "abundance": "9.99"
+    },
+    {
+      "mz": "404.1537",
+      "abundance": "15.78"
+    },
+    {
+      "mz": "418.1515",
+      "abundance": "4.8"
+    },
+    {
+      "mz": "420.1506",
+      "abundance": "89.21"
+    },
+    {
+      "mz": "424.1336",
+      "abundance": "29.77"
+    },
+    {
+      "mz": "440.1468",
+      "abundance": "899.5"
+    },
+    {
+      "mz": "440.6487",
+      "abundance": "42.26"
+    },
+    {
+      "mz": "566.2076",
+      "abundance": "999"
+    },
+    {
+      "mz": "567.2112",
+      "abundance": "32.77"
+    },
+    {
+      "mz": "711.2455",
+      "abundance": "87.01"
+    },
+    {
+      "mz": "715.216",
+      "abundance": "13.89"
+    },
+    {
+      "mz": "733.2278",
+      "abundance": "228.07"
+    },
+    {
+      "mz": "857.3037",
+      "abundance": "159.34"
+    }
+  ],
+  "svgUrl": "https://chemdata.nist.gov/glycan-backend/assets/images/structures/Gly-73-CFG.svg",
+  "metadata": {
+    "Name": "3'-Sialyl Lewis X-CH3",
+    "Type": "MS2",
+    "Precursor Ion": "[M+2Na]2+",
+    "Precursor m/z": "440.1451",
+    "Charge": "2",
+    "Exact Mass": "834.311737",
+    "Molecular Formula": "C32H54N2O23",
+    "Derivatization": "Underivatized",
+    "Ionization": "ESI",
+    "Collision Energy": "17V",
+    "Instrument Type": "Hi-Res CC",
+    "MS Instrument": "Thermo Finnigan Velos Orbitrap",
+    "Sample Inlet": "direct flow injection",
+    "Ionization Mode": "P",
+    "synonyms": [
+      "Glycan 3'-Sialyl Lewis X-CH3",
+      "Glycan MC=h1n1f1a1-CH3",
+      "NeuAcα2-3Galβ1-4(Fucα1-3)GlcNAc-CH3",
+      "Sialyl Lewis X-α-methyl glycoside",
+      "3'-Sialyl-Lewis-X tetrasaccharide-CH3",
+      "3'-SLeX-CH3"
+    ],
+    "NIST No.": "1231524",
+    "Notes": [
+      "Consensus spectrum",
+      "\"V-labs SLN406 (Source: Synthetic, Purity: min 95% by NMR and TLC, Identity: Consistent with structure by NMR)\"",
+      "Vial_ID=Gly_73",
+      "mz_diff=0.0006",
+      "Nreps=21/21"
+    ]
+  }
+}
