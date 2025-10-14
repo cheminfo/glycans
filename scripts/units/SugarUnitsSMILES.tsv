@@ -1,0 +1,77 @@
+Abbreviation	Short Name	IUPAC Condensed name	SMILES
+4eLeg	4-epi-Legionaminic acid	b-4eLeg-onic	C[C@H]([C@H]([C@H]1[C@@H]([C@@H](C[C@](O1)(C(=O)O)O)O)N)N)O
+6dAlt	6-Deoxy-L-altrose	6-deoxy-Alt	C[C@H]1[C@@H]([C@@H]([C@H](C(O1)O)O)O)O
+6dAltNAc	N-Acetyl-6-deoxy-L-altrosamine	6-deoxy-AltNAc	C[C@H]1[C@@H]([C@@H]([C@H](C(O1)O)NC(=O)C)O)O
+6dGul	6-Deoxy-D-gulose	6-deoxy-Gul	C[C@@H]1[C@@H]([C@H]([C@H](C(O1)O)O)O)O
+6dTal	6-Deoxy-D-talose	6-deoxy-Tal	C[C@@H]1[C@@H]([C@@H]([C@@H](C(O1)O)O)O)O
+6dTalNAc	N-Acetyl-6-deoxy-D-talosamine	6-deoxy-TalNAc	C[C@@H]1[C@@H]([C@@H]([C@@H](C(O1)O)NC(=O)C)O)O
+8eAci	8-epi-Acinetaminic acid	"3,9-deoxy-D-gro-a-L-altNon2ulo5N7N-onic"	C[C@H]([C@@H]([C@H]1[C@@H]([C@H](C[C@](O1)(C(=O)O)O)O)N)N)O
+8eLeg	8-epi-Legionaminic acid	"3,9-deoxy-L-gro-b-D-galNon2ulo5N7N-onic"	C[C@@H]([C@H]([C@H]1[C@@H]([C@H](C[C@](O1)(C(=O)O)O)O)N)N)O
+Abe	Abequose	Abe	C[C@@H]1[C@@H](C[C@H](C(O1)O)O)O
+Aci	Acinetaminic acid	a-Aci-onic	C[C@@H]([C@@H]([C@H]1[C@@H]([C@H](C[C@](O1)(C(=O)O)O)O)N)N)O
+All	D-Allose	All	C([C@@H]1[C@H]([C@H]([C@H](C(O1)O)O)O)O)O
+AllA	D-Alluronic acid	AllA	[C@H]1([C@@H]([C@H](OC([C@@H]1O)O)C(=O)O)O)O
+AllN	D-Allosamine	AllN	C([C@@H]1[C@H]([C@H]([C@H](C(O1)O)N)O)O)O
+AllNAc	N-Acetyl-D-allosamine	AllNAc	CC(=O)N[C@@H]1[C@@H]([C@@H]([C@H](OC1O)CO)O)O
+Alt	L-Altrose	Alt	C([C@H]1[C@@H]([C@@H]([C@H](C(O1)O)O)O)O)O
+AltA	L-Altruronic acid	AltA	[C@@H]1([C@H]([C@@H](OC([C@@H]1O)O)C(=O)O)O)O
+AltN	L-Altrosamine	AltN	C([C@H]1[C@@H]([C@@H]([C@H](C(O1)O)N)O)O)O
+AltNAc	N-Acetyl-L-altrosamine	AltNAc	CC(=O)N[C@@H]1[C@H]([C@H]([C@@H](OC1O)CO)O)O
+Api	L-Apiose	"(3R,4R)-4-(hydroxymethyl)oxolane-2,3,4-triol"	C1[C@@]([C@H](C(O1)O)O)(CO)O
+Ara	L-Arabinose	Ara	C1[C@@H]([C@@H]([C@H](C(O1)O)O)O)O
+Bac	Bacillosamine	Bac	C[C@@H]1[C@H]([C@@H]([C@H](C(O1)O)N)O)N
+Col	Colitose	Col	C[C@H]1[C@H](C[C@@H](C(O1)O)O)O
+DDmanHep	D-glycero-D-manno-Heptose	DDManHep	C([C@H]([C@@H]1[C@H]([C@@H]([C@@H](C(O1)O)O)O)O)O)O
+Dha	3-Deoxy-D-lyxo-heptulosaric acid	"(4R,5R,6S)-2,4,5-trihydroxyoxane-2,6-dicarboxylic acid"	C1[C@H]([C@H]([C@H](OC1(C(=O)O)O)C(=O)O)O)O
+Dig	D-Digitoxose	Dig	C[C@@H]1[C@H]([C@H](CC(O1)O)O)O
+Fru	D-Fructose	Fru	C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O
+Fuc	L-Fucose	Fuc	C[C@H]1[C@H]([C@H]([C@@H](C(O1)O)O)O)O
+FucNAc	N-Acetyl-L-fucosamine	FucNAc	C[C@H]1[C@H]([C@H]([C@@H](C(O1)O)NC(=O)C)O)O
+Gal	D-Galactose	Gal	C([C@@H]1[C@@H]([C@@H]([C@H](C(O1)O)O)O)O)O
+GalA	D-Galacturonic acid	GalA	[C@@H]1([C@H]([C@H](OC([C@@H]1O)O)C(=O)O)O)O
+GalN	D-Galactosamine	GalN	C([C@@H]1[C@@H]([C@@H]([C@H](C(O1)O)N)O)O)O
+GalNAc	N-Acetyl-D-galactosamine	GalNAc	CC(=O)N[C@@H]1[C@H]([C@H]([C@H](OC1O)CO)O)O
+Glc	D-Glucose	Glc	C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O
+GlcA	D-Glucuronic acid	GlcA	[C@@H]1([C@@H]([C@H](OC([C@@H]1O)O)C(=O)O)O)O
+GlcN	D-Glucosamine	GlcN	C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)N)O)O)O
+GlcNAc	N-Acetyl-D-glucosamine	GlcNAc	CC(=O)N[C@@H]1[C@H]([C@@H]([C@H](OC1O)CO)O)O
+Gul	D-Gulose	Gul	C([C@@H]1[C@@H]([C@H]([C@H](C(O1)O)O)O)O)O
+GulA	D-Guluronic acid	GulA	[C@H]1([C@H]([C@H](OC([C@@H]1O)O)C(=O)O)O)O
+GulN	D-Gulosamine	GulN	C([C@@H]1[C@@H]([C@H]([C@H](C(O1)O)N)O)O)O
+GulNAc	N-Acetyl-D-gulosamine	GulNAc	CC(=O)N[C@@H]1[C@@H]([C@H]([C@H](OC1O)CO)O)O
+Ido	L-Idose	Ido	C([C@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O
+IdoA	L-Iduronic acid	IdoA	[C@@H]1([C@@H]([C@@H](OC([C@@H]1O)O)C(=O)O)O)O
+IdoN	L-Idosamine	IdoN	C([C@H]1[C@H]([C@@H]([C@H](C(O1)O)N)O)O)O
+IdoNAc	N-Acetyl-L-idosamine	IdoNAc	CC(=O)N[C@@H]1[C@H]([C@@H]([C@@H](OC1O)CO)O)O
+Kdn	2-Keto-3-deoxy-nononic acid	Kdn	C1[C@@H]([C@H]([C@@H](OC1(C(=O)O)O)[C@@H]([C@@H](CO)O)O)O)O
+Kdo	3-Deoxy-D-manno-octulosonic acid	Kdo	C1[C@H]([C@H]([C@H](OC1(C(=O)O)O)[C@@H](CO)O)O)O
+Leg	Legionaminic acid	b-Leg-onic	C[C@H]([C@H]([C@H]1[C@@H]([C@H](C[C@](O1)(C(=O)O)O)O)N)N)O
+LDmanHep	L-glycero-D-manno-Heptose	LDManHep	C([C@@H]([C@@H]1[C@H]([C@@H]([C@@H](C(O1)O)O)O)O)O)O
+Lyx	D-Lyxose	Lyx	C1[C@H]([C@@H]([C@@H](C(O1)O)O)O)O
+Man	D-Mannose	Man	C([C@@H]1[C@H]([C@@H]([C@@H](C(O1)O)O)O)O)O
+ManA	D-Mannuronic acid	ManA	[C@@H]1([C@@H]([C@H](OC([C@H]1O)O)C(=O)O)O)O
+ManN	D-Mannosamine	ManN	C([C@@H]1[C@H]([C@@H]([C@@H](C(O1)O)N)O)O)O
+ManNAc	N-Acetyl-D-mannosamine	ManNAc	CC(=O)N[C@H]1[C@H]([C@@H]([C@H](OC1O)CO)O)O
+Mur	Muramic acid	Mur	C[C@H](C(=O)O)O[C@H]1[C@@H]([C@H](OC([C@@H]1N)O)CO)O
+MurNAc	N-Acetylmuramic acid	MurNAc	C[C@H](C(=O)O)O[C@H]1[C@@H]([C@H](OC([C@@H]1NC(=O)C)O)CO)O
+MurNGc	N-Glycolylmuramic acid	MurNGc	C[C@H](C(=O)O)O[C@H]1[C@@H]([C@H](OC([C@@H]1NC(=O)CO)O)CO)O
+Neu	Neuraminic acid	Neu	C1[C@@H]([C@H]([C@@H](OC1(C(=O)O)O)[C@@H]([C@@H](CO)O)O)N)O
+Neu5Ac	N-Acetylneuraminic acid	NeuAc	CC(=O)N[C@@H]1[C@H](CC(O[C@H]1[C@@H]([C@@H](CO)O)O)(C(=O)O)O)O
+Neu5Gc	N-Glycolylneuraminic acid	NeuGc	C1[C@@H]([C@H]([C@@H](OC1(C(=O)O)O)[C@@H]([C@@H](CO)O)O)NC(=O)CO)O
+Oli	Olivose	Oli	C[C@@H]1[C@H]([C@@H](CC(O1)O)O)O
+Par	Paratose	Par	C[C@@H]1[C@H](C[C@H](C(O1)O)O)O
+Pse	Pseudaminic acid	a-Pse-onic	C[C@@H]([C@@H]([C@H]1[C@H]([C@H](C[C@](O1)(C(=O)O)O)O)N)N)O
+Psi	D-Psicose	Psi	C1[C@H]([C@H]([C@H](C(O1)(CO)O)O)O)O
+Qui	D-Quinovose	Qui	C[C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O
+QuiNAc	N-Acetyl-D-quinovosamine	QuiNAc	C[C@@H]1[C@H]([C@@H]([C@H](C(O1)O)NC(=O)C)O)O
+Rha	L-Rhamnose	Rha	C[C@H]1[C@@H]([C@H]([C@H](C(O1)O)O)O)O
+RhaNAc	N-Acetyl-L-rhamnosamine	RhaNAc	C[C@H]1[C@@H]([C@H]([C@H](C(O1)O)NC(=O)C)O)O
+Rib	D-Ribose	Rib	C1[C@H]([C@H]([C@H](C(O1)O)O)O)O
+Sor	L-Sorbose	Sor	C1[C@@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O
+Tag	D-Tagatose	Tag	C1[C@H]([C@@H]([C@@H](C(O1)(CO)O)O)O)O
+Tal	D-Talose	Tal	C([C@@H]1[C@@H]([C@@H]([C@@H](C(O1)O)O)O)O)O
+TalA	D-Taluronic acid	TalA	[C@@H]1([C@H]([C@H](OC([C@H]1O)O)C(=O)O)O)O
+TalN	D-Talosamine	TalN	C([C@@H]1[C@@H]([C@@H]([C@@H](C(O1)O)N)O)O)O
+TalNAc	N-Acetyl-D-talosamine	TalNAc	CC(=O)N[C@H]1[C@H]([C@H]([C@H](OC1O)CO)O)O
+Tyv	Tyvelose	Tyv	C[C@@H]1[C@H](C[C@@H](C(O1)O)O)O
+Xyl	D-Xylose	Xyl	C1[C@H]([C@@H]([C@H](C(O1)O)O)O)O
