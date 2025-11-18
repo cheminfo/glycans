@@ -8,14 +8,13 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-// eslint-disable-next-line import/no-extraneous-dependencies
 import puppeteer from 'puppeteer';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const outputDir = path.join(__dirname, 'spectra_data');
 await fs.mkdir(outputDir, { recursive: true });
 
-const spectrumIds = [1599831, 1599965, 1234807, 1234807, 1231524];
+const spectrumIds = [1231955, 1600622, 1263618, 1263674];
 
 /**
  * @param {number} id - of the spectrum to scrape
