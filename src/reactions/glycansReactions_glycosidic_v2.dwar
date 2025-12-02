@@ -1,0 +1,86 @@
+<datawarrior-fileinfo>
+<version="3.3">
+<created="1764685435305">
+<rowcount="21">
+</datawarrior-fileinfo>
+<column properties>
+<columnName="atomMapping">
+<columnProperty="parent	rxnCode">
+<columnProperty="specialType	atomMapping">
+<columnName="idcoordinates2D">
+<columnProperty="parent	rxnCode">
+<columnProperty="specialType	idcoordinates2D">
+<columnName="reactionFP">
+<columnProperty="parent	rxnCode">
+<columnProperty="specialType	RxnFP">
+<columnProperty="version	1.0.0">
+<columnName="reactantFFP">
+<columnProperty="parent	rxnCode">
+<columnProperty="specialType	FragFp">
+<columnProperty="reactionPart	reactants">
+<columnProperty="version	1.2.1">
+<columnName="productFFP">
+<columnProperty="parent	rxnCode">
+<columnProperty="specialType	FragFp">
+<columnProperty="reactionPart	products">
+<columnProperty="version	1.2.1">
+<columnName="rxnCode">
+<columnProperty="isFragment	true">
+<columnProperty="specialType	rxncode">
+</column properties>
+atomMapping	idcoordinates2D	reactionFP	reactantFFP	productFFP	rxnCode	reaction	description	mode
+q]gJ IlqCYT Ilq{YiVJD	!Rm?vH?[\B?g?~_quBW@ !Rm?vH?[\B?g?~_xc}GPi\ !ROFUCY]aW?cO~L~BxPvW|VoxS@bT@?itFg@	$4F!480F80c01F#V$V!2J2J1!80BF0F!2!V4F20N0J0J8042!2V06#F!W!F5083*4!1*401&4!1#F01!4020402(F0F82V#108#1#84*F!	zj_BtRZVFX02ZVZ!VV4#40V#80V08%F0V/!F,1.10	zj_BtRacLbs3ycZF0XV4C0140X58080V18%F0Z/!F,1*2%	gFp`AdidvjhCzZIra@ gOp`Adigkjj`Oih@!dclL@@pTie^vnWZjjjh@saP`	α(1→1)		Hex-Pyr/Fur --> Hex-Pyr<NL>Hex-Pyr/Fur --> Pent-Pyr<NL>Pent-Pyr/Fur --> Hex-Pyr<NL>Pent-Pyr/Fur --> Pent-Pyr
+q]gJ IlqvPT Ilqv^VfJD	!Rm?vH?[\B?g?~_quBW@ !Rm?vH?_y??g|[zxc}GPj\ !ROFUCY_xs?cNhDtMexKc|VoxS@bT@?itFG@	0B90BF!50V8V0801VV%c0V!24X0110844F0F%V4F2#J0F844#3V06!FF&50B3#@%4!9*401&4!1#F01!4!84&V!F#2V#108#1#84)4F!	zj_DtTZe0e22aXo0V0VBF4#V!F80V08!V$V*F&F,1.10	zj_DtTaeLju3yeoFVXZDO6148X_8F8FV1c08V0GF0V&1!F&F,1*2%	gFp`AdidvjhCzZIra@ gOp`ATiVKjj`OiX@!dclL@@hTiV~TfWZjjjh@saP`	α(1→2)		Hex-Pyr/Fur --> Hex-Pyr<NL>Hex-Pyr/Fur --> Pent-Pyr<NL>Pent-Pyr/Fur --> Hex-Pyr<NL>Pent-Pyr/Fur --> Pent-Pyr
+q]gJ IlqvU@ IlqvUzfJD	!Rm?vH?[\B?g?~_qwBW@ !Rm?vH?_y??g~H?Q[WGTkl !RLceMN_z]?iuMNPB^IJsrqoym|mgx?itFg@	!184F!51V#803VV(V403420110844F4F!V0FV4F2#J0F8044!3V06!FF&50B3$V$4!8*401&4!1#F$4#4&V!F#2V%8#1-F0H!	zj_DtTZVFi02ZVZF!V404!FV#80V08!k$V/!F!V)1.10	zj_DtTacLjs3ycZF0XV49Z14FX58080V18!k!F0V&1*F!V)1*2%	gFp`AdidvjhCzZIra@ gOp`@tiWMjj`Ohx@!dclL@@XTiWVTjWZjjjh@saP`	α(1→3)		Hex-Pyr/Fur --> Hex-Pyr<NL>Hex-Pyr/Fur --> Pent-Pyr<NL>Pent-Pyr/Fur --> Hex-Pyr<NL>Pent-Pyr/Fur --> Pent-Pyr
+q]gJ IlqvPT Ilqv^VfJD	!Rm?vH?[\B?g?~_quBW@ !Rm?vH?_y??g|[zxc}GPj\ !ROFUCY_xs?cNhDtMexKc|VoxS@bT@?itFG@	0B90BF!50V8V0801VV%c0V!24X0110844F0F%V4F2#J0F844#3V06!FF&50B3#@%4!9*401&4!1#F01!4!84&V!F#2V#108#1#84)4F!	zj_DtTZe0e22aXo0V0VBF4#V!F80V08!V$V*F&F,1.10	zj_DtTaeLju3yeoFVXZDO6148X_8F8FV1c08V0GF0V&1!F&F,1*2%	gFp`AdidvjhCzZIra@ gOp`ATiVKjj`OiX@!dclL@@hTiV~TfWZjjjh@saP`	α(1→4)	Same as α(1→2)	Hex-Pyr/Fur --> Hex-Pyr<NL>Hex-Pyr/Fur --> Pent-Pyr<NL>Pent-Pyr/Fur --> Hex-Pyr<NL>Pent-Pyr/Fur --> Pent-Pyr
+qbqk IEYM}l@ IFUusldblX	!Rm?vH?[\B?g?~_ytBg@ !RiLv[s_{gj`C~yyoMHwr]Bkp !ROJUCi_{SOAk~ttNebG|P~@IZ?nLBIXC~gPZ\	ZJ1F4F01!4gV0c0I#4F9k18V!243011080Bk5NVF#dBF28V@J0F80410D2V060cFF04$5_B30N10F$4-401&4!1#F01!4#4*F#2V%8#1$4*F!	zj_DtTaXJf@2aVZ0VVZB46440V10F80V18!V!F0V!F#1!F&F/,10	zj_DtTaeLfu3yeo0VVZDR6Z48X58F8Fo18!VVFF0V!F#W!F01$F#4/*	gFp`AdidvjhCzZIra@ daDD@@yJYVfjjh@~ch@!dk\L@@z\dTRQTRimNjjjj`CNMB@	α(1→6)		Hex-Pyr/Fur --> Hex-Pyr<NL>Pent-Pyr/Fur --> Hex-Pyr<NL>Pent-Pyr/Fur --> Pent-Pyr
+qbqk IFUCSl IGSJURxkF	!Rm?vH?[\B?g?~_qwBW@ !Rm?vH?[\B?g?~_xc}GXi\ !RRiduf\q??lw~sTjYMYeJio{MRifd?itFs@	V!84H!484RN0g0GkJ14ZVF92V012J3JG!B0gF1NVG280V4F24OVJ0o804304HVBD1s0HV0l0FGh1830F09F$4-401&4!1)4#4*F#2V%8/$F!	zj_BtRZVFX02ZVZ!VV4#40V#80V08%F0V/!F,1.10	zj_BtRacLbs3ycZF0XV4C0140X58080V18%F0Z/!F,1*2%	gFp`AdidvjhCzZIra@ gOp`Adigkjj`Oih@!dclL@@pTie^vnWZjjjh@saP`	β(1→1)		Hex-Pyr/Fur --> Hex-Pyr<NL>Hex-Pyr/Fur --> Pent-Pyr<NL>Pent-Pyr/Fur --> Hex-Pyr<NL>Pent-Pyr/Fur --> Pent-Pyr
+qbqk IFUtpl IGSeRmHkF	!Rm?vH?[\B?g?~_quBW@ !Rm?vH?_y??g~w_Xc}GPj\ !R?LU}q_zS?iOHe?wE@lTBvozS@lT@?atFs@	WB98RFF050ZcV0RVGVo14BVFh2V!2JX411FB44F4NVF08FV4F20W0J0k8461043VB60uFF!F0F1jGB31F8@F$4-401&4!1)4#4*F#2V%8/$F!	zj_DtTZe0e22aXo0V0VBF4#V!F80V08!V$V*F&F,1.10	zj_DtTaeLju3yeoFVXZDO6148X_8F8FV1c08V0GF0V&1!F&F,1*2%	gFp`AdidvjhCzZIra@ gOp`ATiVKjj`OiX@!dclL@@hTiV~TfWZjjjh@saP`	β(1→2)		Hex-Pyr/Fur --> Hex-Pyr<NL>Hex-Pyr/Fur --> Pent-Pyr<NL>Pent-Pyr/Fur --> Hex-Pyr<NL>Pent-Pyr/Fur --> Pent-Pyr
+qbqk IFUt{@ IGSe[IHkF	!Rm?vH?[\B?g?~_qtbW@ !Rm?vH?_y??g~H?_y?GTkl !RBeeuV_ym?fuuVPAMBedJIoymBefD?atFs@	V01NJF!51Z#B0IVo144VF12VB03K2411FB44F4NVFV0FV4Fi090J0F8045043VB60PFF!F0FGU1B30F88k$4-401&4!1)4#4*F#2V%8/$F!	zj_DtTZVFi02ZVZF!V404!FV#80V08!k$V/!F!V)1.10	zj_DtTacLjs3ycZF0XV49Z14FX58080V18!k!F0V&1*F!V)1*2%	gFp`AdidvjhCzZIra@ gOp`@tiWMjj`Ohx@!dclL@@XTiWVTjWZjjjh@saP`	β(1→3)		Hex-Pyr/Fur --> Hex-Pyr<NL>Hex-Pyr/Fur --> Pent-Pyr<NL>Pent-Pyr/Fur --> Hex-Pyr<NL>Pent-Pyr/Fur --> Pent-Pyr
+qbqk IFUCSl IGSeRmHkF	!Rm?vH?[\B?g?~_quBW@ !Rm?vH?[\B?g?~_xc}GPi\ !R?LW}q_zS?iOHe?wE@lTBvozS?LT@?atFs@	WB18JHF#ZcV0R0GVJ14ZVFd2V!2JY4G10B4BF4NVG080V4F24WVJ0o8061042VB60uFH!k0FGhGB31F89F$4-401&4!1)4#4*F#2V%8/$F!	zj_BtRZVFX02ZVZ!VV4#40V#80V08%F0V/!F,1.10	zj_DtTaeLju3yeoFVXZDO6148X_8F8FV1c08V0GF0V&1!F&F,1*2%	gFp`AdidvjhCzZIra@ gOp`Adigkjj`Oih@!dclL@@hTiV~TfWZjjjh@saP`	β(1→4)	Same as β(1→2)	Hex-Pyr/Fur --> Hex-Pyr<NL>Hex-Pyr/Fur --> Pent-Pyr<NL>Pent-Pyr/Fur --> Hex-Pyr<NL>Pent-Pyr/Fur --> Pent-Pyr
+qbqk IEYM}l@ IGSeuldblX	!Rm?vH?[\B?g?~_qvBW@ !RQJt{k_{Wy`C~usnmkWP]bkp !Rxogm~_{}]DK~?^wygG?b~^Kz?owb~_C~gP[l	ZL1N4k01!4gV0w0IVJ14Jdk1@V012J36114B0gk5NVG088dBF28WeJ0k80610D2VBD0sFF04F0F5hpB30N18F$4-401&4!1)4#4*F#2V%8/$F!	zj_DtTaXJf@2aVZ0VVZB46440V10F80V18!V!F0V!F#1!F&F/,10	zj_DtTaeLfu3yeo0VVZDR6Z48X58F8Fo18!VVFF0V!F#W!F01$F#4/*	gFp`AdidvjhCzZIra@ daDD@@yJYVfjjh@~ch@!dk\L@@z\dTRQTRimNjjjj`CNMB@	β(1→6)		Hex-Pyr/Fur --> Hex-Pyr<NL>Pent-Pyr/Fur --> Hex-Pyr<NL>Pent-Pyr/Fur --> Pent-Pyr
+qbpM IxYWSl IxYWSmHKJ	!Rm?vH?[\B?g?~_qv|W@ !RxFVSivcL?k~liw?~GTh| !RgFgUwXqC?aOJWWO~IIs|VoxS@bT@?avFw@	$4H!690V!801*VF024221!804F0F!2!V4F2080J0F80420V6V06#F041!L_083(F044,401$V$1#G01!4#4*F1!2%V8#1#84%F!4FF0	zj_DNRVV0i02ZVo!VVB041!V#80V$V!F0V&1!4/*V)10	zj_DtRacLjs3ycoF0XVBCZ148X580B0V1V!V!F0Z8$F1!4/(F0V+	gFp`AdidvjhCzZIra@ gOp`AdifMjj`Oih@!dclL@@p\dTTUbQTnuUUUPAgBa@	α(1→1)		Hex-Pyr/Fur --> Hex-Fur<NL>Hex-Pyr/Fur --> Pent-Fur<NL>Pent-Pyr/Fur --> Hex-Fur<NL>Pent-Pyr/Fur --> Pent-Fur
+qbqk IEYN}@ IEYN}IHkF	!Rm?vH?[\B?g?~_qu|W@ !RXx\pIQrG_?{~{qbSGTj\ !RASURBWhu__{~{Wpc@`Crqo{m|mgx?itFG@	08104J!50V#801VV!2$V!24X0110864FcF%V4F2!XJ0F804#3V06!FF08$50BY#2#F04-401&4!1#F$4#4*F!V2V%8#1#8*2FF0	zj_DOTVX0i22ZXo0VVVBF4140V!F80V$k!F0V&1!J*V.V)10	zj_DtTaeLju3yeoFVXZDOa148X_8FBFV1!8k01F0V8$F1!J*V,F0V+	gFp`AdidvjhCzZIra@ gOp`@|dTQujj`Ohx@!dclL@@X\dTQRbVTnuUUUPAgBa@	α(1→2)		Hex-Pyr/Fur --> Hex-Fur<NL>Hex-Pyr/Fur --> Pent-Fur<NL>Pent-Pyr/Fur --> Hex-Fur<NL>Pent-Pyr/Fur --> Pent-Fur
+qbqk IEYN}@ IaLJfM]Fy	!Rm?vH?[\B?g?~_quBW@ !RTz_`YRrg_?{~ovT_GPh\ !Ro\VBqQlc?nO~xw~lUZI\ebhbl?{~{ItzO@	!104F!50V#801Vc(V!6420110844F0F%V4F2#J0F804140IV06!FF%150B304(4!8*401&4!1#F$4#4&V!F#2V%8#1-F0H!	zj_DtLZXFi22ZX40VVWB04!Fk!H80V$k!F0V!1#1!J*V.V)10	zj_DtTaeLju3yeoFVX_DOaW4Nm_8H8Fo1#k01F0V!1#1!J01(V4-V+	gFp`AdidvjhCzZIra@ gOp`@tieujj`Ohx@!dclL@@r\dTRLTQUNuUUUPAgFa@	α(1→3)		Hex-Pyr/Fur --> Hex-Fur<NL>Hex-Pyr/Fur --> Pent-Fur<NL>Pent-Pyr/Fur --> Hex-Fur<NL>Pent-Pyr/Fur --> Pent-Fur
+qbqk IEYN}@ IaLJfmQN]	!Rm?vH?[\B?g?~_ywBW@ !RPulhQSq[c?{~C?E?gXj\ !Ra\fzrPve?fW~Y^\@JoxV~a[yfcFZsetz_@	Z#4F$6Z!801#4!V!V0V24301!80Bk5N%c4F20V0J0F804!82V060V0F&54B308(4-401$V04!1%1!4#4*F#2V%8)4%F#F!	zj_DsLZX0e@2aV40VVVB06#V10F80V$V!F0V&1!J/*V)10	zj_DtTaeLfu3yeo0VVVDR6V48X58F80o1#VVFF0V&W!J01)4-V+	gFp`AdidvjhCzZIra@ gOp`@tigujj`Ohx@!dclL@@p\dTRJbQTnuUUUPAgFa@	α(1→5)		Hex-Pyr/Fur --> Hex-Fur<NL>Hex-Pyr/Fur --> Pent-Fur<NL>Pent-Pyr/Fur --> Hex-Fur<NL>Pent-Pyr/Fur --> Pent-Fur
+qbqk IEYN}\@ IaLJf^uDyt	!Rm?vH?[\B?g?~_ytBg@ !R`ynhQ[r[C?{~}p_bvW~]|ep !RNPeFBYTE?`W~AQ|@~heZ?mXfueezTWjnWSi|	Z#4F$Z4!8011!4!V!V!24301!80Bk1N%V4F3#J0F804804XV06VVVF#V!C1830H02#F044,401$V04!1#F01!4#4*F#2V$V8#1$4%F#FF0	zj_DtLaVFjc2aV4!XVB1440FV1!80V$k!F0V!F#1!4*V.V)10	zj_DtTacLjs3ycZF0XVBCZ44FX580B0V1#k!F0V!F!F1!4*V,F0V+	gFp`AdidvjhCzZIra@ daDD@@yJYJjjh@~ch@!dk\L@@r\dTRJTRJmNjjjj`CNCB@	α(1→6)		Hex-Pyr/Fur --> Hex-Fur<NL>Pent-Pyr/Fur --> Hex-Fur
+qbpM IxYWSl IxYWSmHKJ	!Rm?vH?[\B?g?~_qv|W@ !RxFVSivcL?k~liw?~GTh| !RgFgUwPqC?aOJw_O~lFw|VoxS@bT@?avF{@	$4H!690V!801*VF024221!804F0F!2!V4F2080J0F80420V6V06#F041!L_083(F044,401$V$1#G01!4#4*F1!2%V8#1#84%F!4FF0	zj_DNRVV0i02ZVo!VVB041!V#80V$V!F0V&1!4/*V)10	zj_DtRacLjs3ycoF0XVBCZ148X580B0V1V!V!F0Z8$F1!4/(F0V+	gFp`AdidvjhCzZIra@ gOp`AdifMjj`Oih@!dclL@@p\dTTUbQTnuUUUPAgBa@	β(1→1)		Hex-Pyr/Fur --> Hex-Fur<NL>Hex-Pyr/Fur --> Pent-Fur<NL>Pent-Pyr/Fur --> Hex-Fur<NL>Pent-Pyr/Fur --> Pent-Fur
+qbqk IEYN}@ IEYN}IHkF	!Rm?vH?[\B?g?~_qt|W@ !RXx\pIQrG_?{~{qbSGXj\ !Ru]v\j\k]r?{~dyS[pKo|VozS?BT@?ivFS@	08104J!50V#801VV!2$V!24X0110864FcF%V4F2!XJ0F804#3V06!FF08$50BY#2#F04-401&4!1#F$4#4*F!V2V%8#1#8*2FF0	zj_DOTVX0i22ZXo0VVVBF4140V!F80V$k!F0V&1!J*V.V)10	zj_DtTaeLju3yeoFVXZDOa148X_8FBFV1!8k01F0V8$F1!J*V,F0V+	gFp`AdidvjhCzZIra@ gOp`@|dTQujj`Ohx@!dclL@@X\dTQRbVTnuUUUPAgBa@	β(1→2)		Hex-Pyr/Fur --> Hex-Fur<NL>Hex-Pyr/Fur --> Pent-Fur<NL>Pent-Pyr/Fur --> Hex-Fur<NL>Pent-Pyr/Fur --> Pent-Fur
+qbqk IEYN}@ IaLJfM]Fy	!Rm?vH?[\B?g?~_qvBW@ !RTz_`YRrg_?{~ovT_GPh\ !RUQdjF[uZ?hw~cW}rn^krChYjk_{~liwZ?@	!104F!50V#801Vc(V!6420110844F0F%V4F2#J0F804140IV06!FF%150B304(4!8*401&4!1#F$4#4&V!F#2V%8#1-F0H!	zj_DtLZXFi22ZX40VVWB04!Fk!H80V$k!F0V!1#1!J*V.V)10	zj_DtTaeLju3yeoFVX_DOaW4Nm_8H8Fo1#k01F0V!1#1!J01(V4-V+	gFp`AdidvjhCzZIra@ gOp`@tieujj`Ohx@!dclL@@r\dTRLTQUNuUUUPAgFa@	β(1→3)		Hex-Pyr/Fur --> Hex-Fur<NL>Hex-Pyr/Fur --> Pent-Fur<NL>Pent-Pyr/Fur --> Hex-Fur<NL>Pent-Pyr/Fur --> Pent-Fur
+qbqk IEYN}@ IaLJfmQN]	!Rm?vH?[\B?g?~_ywBW@ !RPulhQSq[c?{~C?E?gXj\ !Ra\fzrSvb?fW~Y^\@JoxV~a[yfcFZsetz``	Z#4F$6Z!801#4!V!V0V24301!80Bk5N%c4F20V0J0F804!82V060V0F&54B308(4-401$V04!1%1!4#4*F#2V%8)4%F#F!	zj_DsLZX0e@2aV40VVVB06#V10F80V$V!F0V&1!J/*V)10	zj_DtTaeLfu3yeo0VVVDR6V48X58F80o1#VVFF0V&W!J01)4-V+	gFp`AdidvjhCzZIra@ gOp`@tigujj`Ohx@!dclL@@p\dTRJbQTnuUUUPAgFa@	β(1→5)		Hex-Pyr/Fur --> Hex-Fur<NL>Hex-Pyr/Fur --> Pent-Fur<NL>Pent-Pyr/Fur --> Hex-Fur<NL>Pent-Pyr/Fur --> Pent-Fur
+qbqk IEYN}\@ IaLJf^uDyt	!Rm?vH?[\B?g?~_yu|g@ !R`ynhQ[r[C?{~}p_bvW~]\ep !RvPgFBW||?og~~V}@AhgZ?mZfuigzT_jnW]jB	Z#4F$Z4!8011!4!V!V!24301!80Bk1N%V4F3#J0F804804XV06VVVF#V!C1830H02#F044,401$V04!1#F01!4#4*F#2V$V8#1$4%F#FF0	zj_DtLaVFjc2aV4!XVB1440FV1!80V$k!F0V!F#1!4*V.V)10	zj_DtTacLjs3ycZF0XVBCZ44FX580B0V1#k!F0V!F!F1!4*V,F0V+	gFp`AdidvjhCzZIra@ daDD@@yJYJjjh@~ch@!dk\L@@r\dTRJTRJmNjjjj`CNCB@	β(1→6)		Hex-Pyr/Fur --> Hex-Fur <NL>Pent-Pyr/Fur --> Hex-Fur
+								
+<hitlist data>
+<hitlistName="<selection>">
+<hitlistData="A@@@">
+</hitlist data>
+<datawarrior properties>
+<columnFilter_Table="">
+<columnOrder_Table="reaction	rxnCode	description	mode">
+<columnWidth_Table_description="80">
+<columnWidth_Table_mode="125">
+<columnWidth_Table_reaction="80">
+<columnWidth_Table_rxnCode="950">
+<columnWrapping_Table_description="true">
+<columnWrapping_Table_mode="true">
+<columnWrapping_Table_reaction="true">
+<detailView="height[Data]=0.5;height[rxnCode]=0.5">
+<filter0="#string#	reaction">
+<filter1="#string#	description">
+<filter2="#string#	mode">
+<formLayout_Form View="TableLayout,3,6.0,-1.0,6.0,3,4.0,-1.0,4.0">
+<formObjectCount_Form View="0">
+<headerLines_Table="2">
+<mainSplitting="0.76987">
+<mainView="Table">
+<mainViewCount="2">
+<mainViewDockInfo0="root">
+<mainViewDockInfo1="Table	center">
+<mainViewInFront0="true">
+<mainViewName0="Table">
+<mainViewName1="Form View">
+<mainViewType0="tableView">
+<mainViewType1="formView">
+<rightSplitting="0.67836">
+<rowHeight_Table="80">
+</datawarrior properties>
