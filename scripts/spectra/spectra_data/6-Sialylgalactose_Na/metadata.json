@@ -1,0 +1,134 @@
+{
+  "spectrumId": 1599657,
+  "url": "https://chemdata.nist.gov/glycan/spectra/1599657",
+  "titleBlock": "6-Sialylgalactose, m/z 494.14803\n\nHi-Res IT 35NCE\n\nMS2, [M+Na]+",
+  "name": "6-Sialylgalactose",
+  "synonyms": [
+    "Glycan 6-Sialylgalactose",
+    "Glycan MC=h1a1",
+    "NeuAcα2-6Gal"
+  ],
+  "peaks": [
+    {
+      "mz": "203.0522",
+      "abundance": "17.18"
+    },
+    {
+      "mz": "211.0573",
+      "abundance": "13.89"
+    },
+    {
+      "mz": "226.0682",
+      "abundance": "14.39"
+    },
+    {
+      "mz": "228.0838",
+      "abundance": "5.89"
+    },
+    {
+      "mz": "234.0732",
+      "abundance": "2.1"
+    },
+    {
+      "mz": "236.0526",
+      "abundance": "1.2"
+    },
+    {
+      "mz": "242.0996",
+      "abundance": "1.1"
+    },
+    {
+      "mz": "248.0524",
+      "abundance": "2.1"
+    },
+    {
+      "mz": "252.0836",
+      "abundance": "7.79"
+    },
+    {
+      "mz": "270.0941",
+      "abundance": "7.49"
+    },
+    {
+      "mz": "272.0735",
+      "abundance": "23.88"
+    },
+    {
+      "mz": "296.0734",
+      "abundance": "28.97"
+    },
+    {
+      "mz": "314.084",
+      "abundance": "999"
+    },
+    {
+      "mz": "332.0945",
+      "abundance": "10.09"
+    },
+    {
+      "mz": "360.1256",
+      "abundance": "2.3"
+    },
+    {
+      "mz": "390.136",
+      "abundance": "6.29"
+    },
+    {
+      "mz": "416.1151",
+      "abundance": "1.6"
+    },
+    {
+      "mz": "432.1465",
+      "abundance": "8.59"
+    },
+    {
+      "mz": "434.1258",
+      "abundance": "21.78"
+    },
+    {
+      "mz": "450.1571",
+      "abundance": "106.39"
+    },
+    {
+      "mz": "458.1257",
+      "abundance": "2.3"
+    },
+    {
+      "mz": "476.1363",
+      "abundance": "54.75"
+    }
+  ],
+  "svgUrl": "https://chemdata.nist.gov/glycan-backend/assets/images/structures/Gly-124-CFG.svg",
+  "metadata": {
+    "Name": "6-Sialylgalactose",
+    "Type": "MS2",
+    "Precursor Ion": "[M+Na]+",
+    "Precursor m/z": "494.14803",
+    "Charge": "1",
+    "Exact Mass": "471.158804",
+    "Molecular Formula": "C17H29NO14",
+    "Derivatization": "Underivatized",
+    "Ionization": "ESI",
+    "Collision Energy": "35NCE",
+    "Instrument Type": "Hi-Res IT",
+    "MS Instrument": "Thermo Finnigan Elite Orbitrap",
+    "Sample Inlet": "direct flow injection",
+    "Ionization Mode": "P",
+    "synonyms": [
+      "Glycan 6-Sialylgalactose",
+      "Glycan MC=h1a1",
+      "NeuAcα2-6Gal"
+    ],
+    "CAS No.": "35259235",
+    "NIST No.": "1599657",
+    "Notes": [
+      "Consensus spectrum",
+      "Nreps=21/21",
+      "Mz_diff=-2.0ppm",
+      "micromol/L in water/acetonitrile/formic acid (50/50/0.1)",
+      "\"Carbosynth OS15416 (Source: Synthetic, Purity: min 98% by TLC, Identity: Conforms to structure by 1H NMR)\"",
+      "Vial_ID=Gly_124",
+      "Glycan_2016_ID=10207"
+    ]
+  }
+}

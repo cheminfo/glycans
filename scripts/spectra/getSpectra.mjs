@@ -14,7 +14,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const outputDir = path.join(__dirname, 'spectra_data');
 await fs.mkdir(outputDir, { recursive: true });
 
-const spectrumIds = [1231955, 1600622, 1263618, 1263674];
+const spectrumIds = [
+  1601678, 1601755, 1600083, 1600138, 1595245, 1595259, 1234527, 1599657,
+];
 
 /**
  * @param {number} id - of the spectrum to scrape

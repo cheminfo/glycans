@@ -1,0 +1,181 @@
+{
+  "spectrumId": 1595245,
+  "url": "https://chemdata.nist.gov/glycan/spectra/1595245",
+  "titleBlock": "Man2G0 Fragment a, m/z 990.31749\n\nHi-Res IT 35NCE\n\nMS2, [M+K]+",
+  "name": "Man2G0 Fragment a",
+  "synonyms": [
+    "Glycan Man2G0 Fragment a",
+    "Glycan MC=h2n3",
+    "GlcNAcβ1,2Manα1,3Manβ1,4GlcNAcβ1,4GlcNAc"
+  ],
+  "peaks": [
+    {
+      "mz": "262.8381",
+      "abundance": "2.2"
+    },
+    {
+      "mz": "463.1326",
+      "abundance": "88.31"
+    },
+    {
+      "mz": "566.1483",
+      "abundance": "168.03"
+    },
+    {
+      "mz": "567.1516",
+      "abundance": "4.8"
+    },
+    {
+      "mz": "625.1852",
+      "abundance": "25.27"
+    },
+    {
+      "mz": "686.1904",
+      "abundance": "43.06"
+    },
+    {
+      "mz": "751.218",
+      "abundance": "3"
+    },
+    {
+      "mz": "753.2516",
+      "abundance": "32.97"
+    },
+    {
+      "mz": "769.2277",
+      "abundance": "999"
+    },
+    {
+      "mz": "770.2314",
+      "abundance": "87.31"
+    },
+    {
+      "mz": "785.1882",
+      "abundance": "3.8"
+    },
+    {
+      "mz": "787.2383",
+      "abundance": "538.96"
+    },
+    {
+      "mz": "788.2413",
+      "abundance": "51.75"
+    },
+    {
+      "mz": "799.2278",
+      "abundance": "9.79"
+    },
+    {
+      "mz": "813.2617",
+      "abundance": "27.97"
+    },
+    {
+      "mz": "828.7464",
+      "abundance": "4.2"
+    },
+    {
+      "mz": "829.2413",
+      "abundance": "97.5"
+    },
+    {
+      "mz": "845.2133",
+      "abundance": "9.99"
+    },
+    {
+      "mz": "859.2479",
+      "abundance": "33.97"
+    },
+    {
+      "mz": "873.2952",
+      "abundance": "4.8"
+    },
+    {
+      "mz": "874.2991",
+      "abundance": "28.17"
+    },
+    {
+      "mz": "875.3059",
+      "abundance": "3.3"
+    },
+    {
+      "mz": "889.27",
+      "abundance": "306.19"
+    },
+    {
+      "mz": "890.2726",
+      "abundance": "36.66"
+    },
+    {
+      "mz": "900.7664",
+      "abundance": "21.38"
+    },
+    {
+      "mz": "909.2802",
+      "abundance": "4"
+    },
+    {
+      "mz": "909.7725",
+      "abundance": "74.63"
+    },
+    {
+      "mz": "910.2745",
+      "abundance": "3.6"
+    },
+    {
+      "mz": "930.2933",
+      "abundance": "26.77"
+    },
+    {
+      "mz": "931.3008",
+      "abundance": "5.69"
+    },
+    {
+      "mz": "939.7852",
+      "abundance": "2.9"
+    },
+    {
+      "mz": "972.3076",
+      "abundance": "781.22"
+    },
+    {
+      "mz": "973.3101",
+      "abundance": "120.48"
+    },
+    {
+      "mz": "1881.7855",
+      "abundance": "3.1"
+    }
+  ],
+  "svgUrl": "https://chemdata.nist.gov/glycan-backend/assets/images/structures/Gly-180-CFG.svg",
+  "metadata": {
+    "Name": "Man2G0 Fragment a",
+    "Type": "MS2",
+    "Precursor Ion": "[M+K]+",
+    "Precursor m/z": "990.31749",
+    "Charge": "1",
+    "Exact Mass": "951.35433",
+    "Molecular Formula": "C36H61N3O26",
+    "Derivatization": "Underivatized",
+    "Ionization": "ESI",
+    "Collision Energy": "35NCE",
+    "Instrument Type": "Hi-Res IT",
+    "MS Instrument": "Thermo Finnigan Elite Orbitrap",
+    "Sample Inlet": "direct flow injection",
+    "Ionization Mode": "P",
+    "synonyms": [
+      "Glycan Man2G0 Fragment a",
+      "Glycan MC=h2n3",
+      "GlcNAcβ1,2Manα1,3Manβ1,4GlcNAcβ1,4GlcNAc"
+    ],
+    "NIST No.": "1595245",
+    "Notes": [
+      "Consensus spectrum",
+      "Nreps=7/7",
+      "Mz_diff=-5.4ppm",
+      "micromol/L in water/acetonitrile/formic acid (50/50/0.1)",
+      "\"Chemily N020\"",
+      "Vial_ID=Gly_180",
+      "Glycan_2016_ID=5785"
+    ]
+  }
+}

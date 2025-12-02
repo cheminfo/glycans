@@ -1,0 +1,157 @@
+{
+  "spectrumId": 1600138,
+  "url": "https://chemdata.nist.gov/glycan/spectra/1600138",
+  "titleBlock": "Blood Group A Tetrasaccharide, m/z 714.24271\n\nHi-Res IT 35NCE\n\nMS2, [M+Na]+",
+  "name": "Blood Group A Tetrasaccharide",
+  "synonyms": [
+    "Glycan Blood Group A Tetrasaccharide",
+    "Glycan MC=h2n1f1",
+    "GalNAcα1-3(Fucα1-2)Galβ1-4Glc",
+    "Blood Group A Type II tetrasaccharide"
+  ],
+  "peaks": [
+    {
+      "mz": "226.0679",
+      "abundance": "3"
+    },
+    {
+      "mz": "244.0784",
+      "abundance": "35.86"
+    },
+    {
+      "mz": "331.0988",
+      "abundance": "3.1"
+    },
+    {
+      "mz": "365.1041",
+      "abundance": "15.48"
+    },
+    {
+      "mz": "388.1202",
+      "abundance": "395.2"
+    },
+    {
+      "mz": "389.1236",
+      "abundance": "16.88"
+    },
+    {
+      "mz": "406.1306",
+      "abundance": "3.5"
+    },
+    {
+      "mz": "448.1412",
+      "abundance": "1.1"
+    },
+    {
+      "mz": "493.1509",
+      "abundance": "1.8"
+    },
+    {
+      "mz": "508.162",
+      "abundance": "20.08"
+    },
+    {
+      "mz": "509.1649",
+      "abundance": "1"
+    },
+    {
+      "mz": "511.1615",
+      "abundance": "28.47"
+    },
+    {
+      "mz": "512.1646",
+      "abundance": "1.3"
+    },
+    {
+      "mz": "520.162",
+      "abundance": "1.7"
+    },
+    {
+      "mz": "534.1774",
+      "abundance": "636.16"
+    },
+    {
+      "mz": "535.1807",
+      "abundance": "31.77"
+    },
+    {
+      "mz": "550.1723",
+      "abundance": "53.25"
+    },
+    {
+      "mz": "551.1758",
+      "abundance": "3"
+    },
+    {
+      "mz": "552.1881",
+      "abundance": "8.69"
+    },
+    {
+      "mz": "568.1827",
+      "abundance": "999"
+    },
+    {
+      "mz": "569.1862",
+      "abundance": "59.24"
+    },
+    {
+      "mz": "594.1984",
+      "abundance": "4"
+    },
+    {
+      "mz": "654.2194",
+      "abundance": "67.23"
+    },
+    {
+      "mz": "655.2224",
+      "abundance": "5.39"
+    },
+    {
+      "mz": "666.2188",
+      "abundance": "5.89"
+    },
+    {
+      "mz": "696.2297",
+      "abundance": "149.35"
+    },
+    {
+      "mz": "697.2331",
+      "abundance": "8.99"
+    }
+  ],
+  "svgUrl": "https://chemdata.nist.gov/glycan-backend/assets/images/structures/Gly-140-CFG.svg",
+  "metadata": {
+    "Name": "Blood Group A Tetrasaccharide",
+    "Type": "MS2",
+    "Precursor Ion": "[M+Na]+",
+    "Precursor m/z": "714.24271",
+    "Charge": "1",
+    "Exact Mass": "691.253494",
+    "Molecular Formula": "C26H45NO20",
+    "Derivatization": "Underivatized",
+    "Ionization": "ESI",
+    "Collision Energy": "35NCE",
+    "Instrument Type": "Hi-Res IT",
+    "MS Instrument": "Thermo Finnigan Elite Orbitrap",
+    "Sample Inlet": "direct flow injection",
+    "Ionization Mode": "P",
+    "synonyms": [
+      "Glycan Blood Group A Tetrasaccharide",
+      "Glycan MC=h2n1f1",
+      "GalNAcα1-3(Fucα1-2)Galβ1-4Glc",
+      "Blood Group A Type II tetrasaccharide"
+    ],
+    "CAS No.": "59957925",
+    "NIST No.": "1600138",
+    "Notes": [
+      "Consensus spectrum",
+      "Nreps=19/19",
+      "Mz_diff=-1.3ppm",
+      "micromol/L in water/acetonitrile/formic acid (50/50/0.1)",
+      "\"Carbosynth OB03872 (Source: Human urine, Purity: min 90% by 1H-NMR)",
+      "Type Milk Oligosaccharide\"",
+      "Vial_ID=Gly_140",
+      "Glycan_2016_ID=10688"
+    ]
+  }
+}

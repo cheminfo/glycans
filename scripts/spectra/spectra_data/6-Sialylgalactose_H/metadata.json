@@ -1,0 +1,68 @@
+{
+  "spectrumId": 1234527,
+  "url": "https://chemdata.nist.gov/glycan/spectra/1234527",
+  "titleBlock": "6-Sialylgalactose, m/z 472.1661\n\nHi-Res IT 35NCE\n\nMS2, [M+H]+",
+  "name": "6-Sialylgalactose",
+  "synonyms": [
+    "Glycan 6-Sialylgalactose",
+    "Glycan MC=h1a1",
+    "NeuAcα2-6Gal"
+  ],
+  "peaks": [
+    {
+      "mz": "162.0756",
+      "abundance": "7.89"
+    },
+    {
+      "mz": "274.0896",
+      "abundance": "16.88"
+    },
+    {
+      "mz": "292.1027",
+      "abundance": "17.68"
+    },
+    {
+      "mz": "418.153",
+      "abundance": "999"
+    },
+    {
+      "mz": "436.1634",
+      "abundance": "259.34"
+    },
+    {
+      "mz": "454.1744",
+      "abundance": "354.55"
+    }
+  ],
+  "svgUrl": "https://chemdata.nist.gov/glycan-backend/assets/images/structures/Gly-124-CFG.svg",
+  "metadata": {
+    "Name": "6-Sialylgalactose",
+    "Type": "MS2",
+    "Precursor Ion": "[M+H]+",
+    "Precursor m/z": "472.1661",
+    "Charge": "1",
+    "Exact Mass": "471.158804",
+    "Molecular Formula": "C17H29NO14",
+    "Derivatization": "Underivatized",
+    "Ionization": "ESI",
+    "Collision Energy": "35NCE",
+    "Instrument Type": "Hi-Res IT",
+    "MS Instrument": "Thermo Finnigan Elite Orbitrap",
+    "Sample Inlet": "direct flow injection",
+    "Ionization Mode": "P",
+    "synonyms": [
+      "Glycan 6-Sialylgalactose",
+      "Glycan MC=h1a1",
+      "NeuAcα2-6Gal"
+    ],
+    "CAS No.": "35259235",
+    "NIST No.": "1234527",
+    "Notes": [
+      "Consensus spectrum",
+      "\"Carbosynth OS15416 (Source: Synthetic, Purity: min 98% by TLC, Identity: Conforms to structure by 1H NMR)\"",
+      "Vial_ID=Gly_124",
+      "mz_diff=0.0004",
+      "Nreps=23/23"
+    ]
+  }
+}

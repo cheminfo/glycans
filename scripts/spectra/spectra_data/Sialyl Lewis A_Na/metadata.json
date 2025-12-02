@@ -1,0 +1,169 @@
+{
+  "spectrumId": 1601755,
+  "url": "https://chemdata.nist.gov/glycan/spectra/1601755",
+  "titleBlock": "Sialyl Lewis A, m/z 843.28531\n\nHi-Res IT 35NCE\n\nMS2, [M+Na]+",
+  "name": "Sialyl Lewis A",
+  "synonyms": [
+    "D-Glucose, O-(N-acetyl-α-neuraminosyl)-(2->3)-O-β-D-galactopyranosyl-(1->3)-O-[6-deoxy-α-L-galactopyranosyl-(1->4)]-2-(acetylamino)-2-deoxy-",
+    "Glycan 3'-Sialyl Lewis A",
+    "Glycan MC=h1n1f1a1",
+    "NeuAcα2-3Galβ1-3(Fucα1-4)GlcNAc"
+  ],
+  "peaks": [
+    {
+      "mz": "244.0788",
+      "abundance": "1"
+    },
+    {
+      "mz": "314.0837",
+      "abundance": "5.69"
+    },
+    {
+      "mz": "332.0943",
+      "abundance": "1.4"
+    },
+    {
+      "mz": "372.1253",
+      "abundance": "41.66"
+    },
+    {
+      "mz": "373.1288",
+      "abundance": "3.1"
+    },
+    {
+      "mz": "388.1202",
+      "abundance": "2.5"
+    },
+    {
+      "mz": "390.1358",
+      "abundance": "3.8"
+    },
+    {
+      "mz": "406.1307",
+      "abundance": "238.86"
+    },
+    {
+      "mz": "407.1341",
+      "abundance": "18.98"
+    },
+    {
+      "mz": "432.1464",
+      "abundance": "1.2"
+    },
+    {
+      "mz": "450.1567",
+      "abundance": "7.89"
+    },
+    {
+      "mz": "458.1255",
+      "abundance": "1.2"
+    },
+    {
+      "mz": "476.1359",
+      "abundance": "19.68"
+    },
+    {
+      "mz": "477.1393",
+      "abundance": "1.8"
+    },
+    {
+      "mz": "494.1465",
+      "abundance": "19.38"
+    },
+    {
+      "mz": "495.15",
+      "abundance": "1.9"
+    },
+    {
+      "mz": "534.1774",
+      "abundance": "3.9"
+    },
+    {
+      "mz": "552.188",
+      "abundance": "999"
+    },
+    {
+      "mz": "553.191",
+      "abundance": "116.78"
+    },
+    {
+      "mz": "653.2352",
+      "abundance": "12.09"
+    },
+    {
+      "mz": "654.239",
+      "abundance": "2.5"
+    },
+    {
+      "mz": "679.2146",
+      "abundance": "14.99"
+    },
+    {
+      "mz": "680.2178",
+      "abundance": "2.4"
+    },
+    {
+      "mz": "697.2251",
+      "abundance": "97.8"
+    },
+    {
+      "mz": "698.2282",
+      "abundance": "15.18"
+    },
+    {
+      "mz": "783.261",
+      "abundance": "2.2"
+    },
+    {
+      "mz": "799.2929",
+      "abundance": "71.43"
+    },
+    {
+      "mz": "800.2961",
+      "abundance": "13.99"
+    },
+    {
+      "mz": "825.2722",
+      "abundance": "16.38"
+    },
+    {
+      "mz": "826.2758",
+      "abundance": "2.9"
+    }
+  ],
+  "svgUrl": "https://chemdata.nist.gov/glycan-backend/assets/images/structures/Gly-72-CFG.svg",
+  "metadata": {
+    "Name": "Sialyl Lewis A",
+    "Type": "MS2",
+    "Precursor Ion": "[M+Na]+",
+    "Precursor m/z": "843.28531",
+    "Charge": "1",
+    "Exact Mass": "820.296085",
+    "Molecular Formula": "C31H52N2O23",
+    "Derivatization": "Underivatized",
+    "Ionization": "ESI",
+    "Collision Energy": "35NCE",
+    "Instrument Type": "Hi-Res IT",
+    "MS Instrument": "Thermo Finnigan Elite Orbitrap",
+    "Sample Inlet": "direct flow injection",
+    "Ionization Mode": "P",
+    "synonyms": [
+      "D-Glucose, O-(N-acetyl-α-neuraminosyl)-(2->3)-O-β-D-galactopyranosyl-(1->3)-O-[6-deoxy-α-L-galactopyranosyl-(1->4)]-2-(acetylamino)-2-deoxy-",
+      "Glycan 3'-Sialyl Lewis A",
+      "Glycan MC=h1n1f1a1",
+      "NeuAcα2-3Galβ1-3(Fucα1-4)GlcNAc"
+    ],
+    "CAS No.": "92448221",
+    "NIST No.": "1601755",
+    "Notes": [
+      "Consensus spectrum",
+      "Nreps=20/20",
+      "Mz_diff=-4.7ppm",
+      "micromol/L in water/acetonitrile/formic acid (50/50/0.1)",
+      "\"V-labs SLN404 (Source: Synthetic, Purity: >95% by NMR, Identity: Consistent with structure by 1H-NMR), Sigma S2279 (Purity: >95% by NMR)",
+      "Type Milk Oligosaccharide\"",
+      "Vial_ID=Gly_72",
+      "Glycan_2016_ID=12312"
+    ]
+  }
+}

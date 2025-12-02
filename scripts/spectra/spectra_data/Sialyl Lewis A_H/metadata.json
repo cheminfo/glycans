@@ -1,0 +1,69 @@
+{
+  "spectrumId": 1601678,
+  "url": "https://chemdata.nist.gov/glycan/spectra/1601678",
+  "titleBlock": "Sialyl Lewis A, m/z 821.30336\n\nHi-Res IT 35NCE\n\nMS2, [M+H]+",
+  "name": "Sialyl Lewis A",
+  "synonyms": [
+    "D-Glucose, O-(N-acetyl-α-neuraminosyl)-(2->3)-O-β-D-galactopyranosyl-(1->3)-O-[6-deoxy-α-L-galactopyranosyl-(1->4)]-2-(acetylamino)-2-deoxy-",
+    "Glycan 3'-Sialyl Lewis A",
+    "Glycan MC=h1n1f1a1",
+    "NeuAcα2-3Galβ1-3(Fucα1-4)GlcNAc"
+  ],
+  "peaks": [
+    {
+      "mz": "336.0652",
+      "abundance": "999"
+    },
+    {
+      "mz": "354.0758",
+      "abundance": "485.91"
+    },
+    {
+      "mz": "490.1511",
+      "abundance": "379.92"
+    },
+    {
+      "mz": "508.1615",
+      "abundance": "523.68"
+    },
+    {
+      "mz": "532.0922",
+      "abundance": "588.61"
+    }
+  ],
+  "svgUrl": "https://chemdata.nist.gov/glycan-backend/assets/images/structures/Gly-72-CFG.svg",
+  "metadata": {
+    "Name": "Sialyl Lewis A",
+    "Type": "MS2",
+    "Precursor Ion": "[M+H]+",
+    "Precursor m/z": "821.30336",
+    "Charge": "1",
+    "Exact Mass": "820.296085",
+    "Molecular Formula": "C31H52N2O23",
+    "Derivatization": "Underivatized",
+    "Ionization": "ESI",
+    "Collision Energy": "35NCE",
+    "Instrument Type": "Hi-Res IT",
+    "MS Instrument": "Thermo Finnigan Elite Orbitrap",
+    "Sample Inlet": "direct flow injection",
+    "Ionization Mode": "P",
+    "synonyms": [
+      "D-Glucose, O-(N-acetyl-α-neuraminosyl)-(2->3)-O-β-D-galactopyranosyl-(1->3)-O-[6-deoxy-α-L-galactopyranosyl-(1->4)]-2-(acetylamino)-2-deoxy-",
+      "Glycan 3'-Sialyl Lewis A",
+      "Glycan MC=h1n1f1a1",
+      "NeuAcα2-3Galβ1-3(Fucα1-4)GlcNAc"
+    ],
+    "CAS No.": "92448221",
+    "NIST No.": "1601678",
+    "Notes": [
+      "Consensus spectrum",
+      "Nreps=3/21",
+      "Mz_diff=-4.4ppm",
+      "micromol/L in water/acetonitrile/formic acid (50/50/0.1)",
+      "\"V-labs SLN404 (Source: Synthetic, Purity: >95% by NMR, Identity: Consistent with structure by 1H-NMR), Sigma S2279 (Purity: >95% by NMR)",
+      "Type Milk Oligosaccharide\"",
+      "Vial_ID=Gly_72",
+      "Glycan_2016_ID=12234"
+    ]
+  }
+}
