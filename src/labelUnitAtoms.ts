@@ -11,9 +11,20 @@ export function labelUnitAtoms(unit): void {
   const nbPentose = applyFragmentLabels(molecule, pentoseFragment, {
     prefix: `${index}_`,
   });
-  const nbhexose = applyFragmentLabels(molecule, hexoseFragment, {
+  if (nbPentose > 0) {
+    unit.ringSize = 5;
+    return;
+  }
+  const nbHexose = applyFragmentLabels(molecule, hexoseFragment, {
     prefix: `${index}_`,
   });
+  if (nbHexose > 0) {
+    unit.ringSize = 6;
+    return;
+  }
+  console.warn(
+    `No pentose or hexose fragment found in unit ${index} (${unit.name})`,
+  );
 }
 
 const pentose = `
