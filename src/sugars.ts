@@ -535,3 +535,8 @@ export const sugars: Sugar[] = [
     idCode: 'deTJ@@qaeJYyzzjjjpeRy@@',
   },
 ];
+
+export const sugarByAbbreviation: Record<string, Sugar> = {};
+for (const sugar of sugars) {
+  sugarByAbbreviation[sugar.abbreviation] = sugar;
+}

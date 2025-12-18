@@ -1,10 +1,19 @@
 import { Molecule } from 'openchemlib';
+import { applyFragmentLabels } from 'openchemlib-utils';
 
-export function labelUnitAtoms(molecule: Molecule): void {
+export function labelUnitAtoms(unit): void {
+  const { molecule, index } = unit;
   const pentoseFragment = Molecule.fromMolfile(pentose);
   pentoseFragment.setFragment(true);
   const hexoseFragment = Molecule.fromMolfile(hexose);
   hexoseFragment.setFragment(true);
+
+  const nbPentose = applyFragmentLabels(molecule, pentoseFragment, {
+    prefix: `${index}_`,
+  });
+  const nbhexose = applyFragmentLabels(molecule, hexoseFragment, {
+    prefix: `${index}_`,
+  });
 }
 
 const pentose = `
