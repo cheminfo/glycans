@@ -33,16 +33,17 @@ function addBond(molecule: Molecule, link): void {
   const from = `${link.from}_${parts[1]}`;
   const to = `${link.to}_${parts[2]}`;
   const type = ['alpha', '⍺', 'α'].includes(parts[0]) ? 'alpha' : 'beta';
-  //const relativeTo = `${link.from}_${link.relativeTo}`;
-  const relativeTo = `${link.from}_5`;
 
   const atom1 = findAtomByLabel(molecule, from);
   const linkedOxygen1 = getLinkedOxygenAtom(molecule, atom1);
   const atom2 = findAtomByLabel(molecule, to);
   const linkedOxygen2 = getLinkedOxygenAtom(molecule, atom2);
 
-  const relativeToAtom = findAtomByLabel(molecule, relativeTo);
-  const relativeChirality = getChiralBondKind(molecule, relativeToAtom);
+  const relativeStereoFromAtom = findAtomByLabel(
+    molecule,
+    link.relativeStereoFrom,
+  );
+  const relativeChirality = getChiralBondKind(molecule, relativeStereoFromAtom);
 
   const bond = molecule.addBond(atom1, linkedOxygen2);
 

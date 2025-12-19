@@ -12,7 +12,12 @@ const regex = new RegExp(
 );
 
 // extend Sugar with Molecule
-export type SugarUnit = Sugar & { molecule: Molecule; id: number };
+export type SugarUnit = Sugar & {
+  molecule: Molecule;
+  id: number;
+  ringSize: number;
+  relativeStereoAtom: string;
+};
 export interface ParsedIupacCondensed {
   units: SugarUnit[];
   links: Array<{ from: number; to: number; type: string; part: string }>;
@@ -27,6 +32,7 @@ export function parseIupacCondensed(iupac: string): ParsedIupacCondensed {
   for (const part of parts) {
     if (part.match(/\d-\d/)) {
       links.push({
+        relativeStereoFrom: units[index - 1]?.relativeStereoAtom,
         from: index - 1,
         to: index,
         type: part.replace(/^\(/, '').replace(/\)$/, ''),
@@ -38,12 +44,13 @@ export function parseIupacCondensed(iupac: string): ParsedIupacCondensed {
     const sugar = getSugar(part);
 
     const molecule = Molecule.fromSmiles(sugar.smiles);
-    labelUnitAtoms(molecule, index);
     const result = {
-      id: index++,
+      id: index,
+      ...labelUnitAtoms(molecule, index),
       ...sugar,
       molecule,
     };
+    index++;
     units.push(result);
   }
 

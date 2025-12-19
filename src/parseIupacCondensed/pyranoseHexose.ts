@@ -1,4 +1,4 @@
-export const hexose = `
+export const pyranoseHexose = `
 Actelion Java MolfileCreator 1.0
 
   8  8  0  0  0  0  0  0  0  0999 V2000

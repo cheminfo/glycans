@@ -1,4 +1,4 @@
-export const pentose = `
+export const furanosePentose = `
 Actelion Java MolfileCreator 1.0
 
   7  7  0  0  0  0  0  0  0  0999 V2000
