@@ -1,0 +1,46 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NeuAc(α2-3)Gal(β1-4)GlcNAc 1`] = `
+{
+  "links": [
+    {
+      "from": 0,
+      "part": "(α2-3)",
+      "to": 1,
+      "type": "α2-3",
+    },
+    {
+      "from": 1,
+      "part": "(β1-4)",
+      "to": 2,
+      "type": "β1-4",
+    },
+  ],
+  "units": [
+    {
+      "abbreviation": "Neu5Ac",
+      "id": 0,
+      "idCode": "fjuaH@C@PRfkARUIngYV~[EIjjjjjfjgDJRbdy@@",
+      "iupacCondensed": "NeuAc",
+      "shortName": "N-Acetylneuraminic acid",
+      "smiles": "CC(=O)N[C@@H]1[C@H](CC(O[C@H]1[C@@H]([C@@H](CO)O)O)(C(=O)O)O)O",
+    },
+    {
+      "abbreviation": "Gal",
+      "id": 1,
+      "idCode": "dcLF@@siWTify^ajjjjIHRjB\`@",
+      "iupacCondensed": "Gal",
+      "shortName": "D-Galactose",
+      "smiles": "C([C@@H]1[C@@H]([C@@H]([C@H](C(O1)O)O)O)O)O",
+    },
+    {
+      "abbreviation": "GlcNAc",
+      "id": 2,
+      "idCode": "do~F@DCadwrJKQQQEY]ZjjjjHhtV[@@",
+      "iupacCondensed": "GlcNAc",
+      "shortName": "N-Acetyl-D-glucosamine",
+      "smiles": "CC(=O)N[C@@H]1[C@H]([C@@H]([C@H](OC1O)CO)O)O",
+    },
+  ],
+}
+`;
