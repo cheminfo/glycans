@@ -14,6 +14,7 @@
     "src"
   ],
   "scripts": {
+    "benchmark": "tsx --watch src/benchmark/script.ts",
     "check-types": "tsc --noEmit",
     "clean": "rimraf coverage lib",
     "eslint": "eslint .",
@@ -31,6 +32,7 @@
     "openchemlib-utils": "^8.9.0"
   },
   "devDependencies": {
+    "@types/jsdom": "^27.0.0",
     "@types/node": "^25.0.3",
     "@types/papaparse": "^5.5.2",
     "@vitest/coverage-v8": "^4.0.16",
@@ -38,12 +40,14 @@
     "eslint": "^9.39.2",
     "eslint-config-cheminfo-typescript": "^21.0.1",
     "jcampconverter": "^12.2.0",
+    "jsdom": "^28.1.0",
     "ms-spectrum": "^3.9.2",
     "openchemlib": "^9.20.0",
     "papaparse": "^5.5.3",
     "prettier": "^3.7.4",
     "puppeteer": "^24.33.0",
     "rimraf": "^6.1.2",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "vitest": "^4.0.16"
   },
