@@ -27,7 +27,7 @@
     "tsc-build": "tsc --project tsconfig.build.json"
   },
   "dependencies": {
-    "openchemlib": "^9.18.2",
+    "mass-fragmentation": "^1.11.10",
     "openchemlib-utils": "^8.9.0"
   },
   "devDependencies": {
@@ -37,6 +37,9 @@
     "@zakodium/tsconfig": "^1.0.2",
     "eslint": "^9.39.2",
     "eslint-config-cheminfo-typescript": "^21.0.1",
+    "jcampconverter": "^12.2.0",
+    "ms-spectrum": "^3.9.2",
+    "openchemlib": "^9.20.0",
     "papaparse": "^5.5.3",
     "prettier": "^3.7.4",
     "puppeteer": "^24.33.0",

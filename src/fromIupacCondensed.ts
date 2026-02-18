@@ -1,7 +1,7 @@
 import { Molecule } from 'openchemlib';
 
 import type { Sugar } from './Sugar.ts';
-import { iupacCondensedObject, sugars } from './sugars.js';
+import { iupacCondensedObject, sugars } from './sugars.ts';
 /**
  * @see https://www.glycoforum.gr.jp/article/22A2.html#mokuji02
  * @param iupac
