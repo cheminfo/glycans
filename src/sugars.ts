@@ -536,16 +536,7 @@ export const sugars: Sugar[] = [
   },
 ];
 
-export const sugarByAbbreviation: Record<string, Sugar> = {};
+export const iupacCondensedObject: Record<string, Sugar> = {};
 for (const sugar of sugars) {
-  sugarByAbbreviation[sugar.abbreviation] = sugar;
-}
-
-const sortedByIupacCondensedLength = sugars.toSorted(
-  (a, b) => b.iupacCondensed.length - a.iupacCondensed.length,
-);
-
-export const sugarByIupacCondensed: Record<string, Sugar> = {};
-for (const sugar of sortedByIupacCondensedLength) {
-  sugarByIupacCondensed[sugar.iupacCondensed] = sugar;
+  iupacCondensedObject[sugar.iupacCondensed] = sugar;
 }

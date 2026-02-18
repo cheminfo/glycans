@@ -35,11 +35,18 @@ function appendICCode(lines: any[]) {
   }
 }
 
+const sugars = JSON.stringify(lines, null, 2);
+
 await writeFile(
   join(import.meta.dirname, '../../src/sugars.ts'),
-  `import { Sugar } from './Sugar.ts';
-export const sugars: Sugar[] = ` +
-    JSON.stringify(lines, null, 2) +
-    ';',
+  `
+import { Sugar } from './Sugar.ts';
+export const sugars: Sugar[] = ${sugars};
+
+export const iupacCondensedObject: Record<string, Sugar> = {};
+for (const sugar of sugars) {
+  iupacCondensedObject[sugar.iupacCondensed] = sugar;
+}
+`,
   'utf8',
 );
