@@ -119,3 +119,6 @@ dist
 
 lib
 scripts/icons/downloaded_icons/
+
+
+/src/benchmarkMultiCandidates/results
