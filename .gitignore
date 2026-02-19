@@ -120,5 +120,5 @@ dist
 lib
 scripts/icons/downloaded_icons/
 
-
+/src/benchmark/results
 /src/benchmarkMultiCandidates/results
