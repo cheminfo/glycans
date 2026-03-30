@@ -15,7 +15,6 @@
 
 import { parentPort, workerData } from 'node:worker_threads';
 
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { JSDOM } from 'jsdom';
 import { getFragmentationSVG, reactionFragmentation } from 'mass-fragmentation';
 import * as OCL from 'openchemlib';
@@ -57,6 +56,7 @@ interface SimulatedFragment {
 /**
  * Walk all fragmentation tree nodes and collect (m/z, mechanism-label) pairs.
  * Skips root nodes that have no reaction (i.e. the original molecule).
+ * @param trees
  */
 function collectSimulatedFragments(trees: object[]): SimulatedFragment[] {
   const result: SimulatedFragment[] = [];
@@ -108,16 +108,12 @@ const fragments = reactionFragmentation(molecule, {
   trees: object[];
   reactions: {
     getFilteredReactions: (opts: {
-      filter: (node: {
-        molecules: Array<{ info: { mz: number } }>;
-      }) => boolean;
+      filter: (node: { molecules: Array<{ info: { mz: number } }> }) => boolean;
     }) => { trees: object[] };
   };
 };
 
-const masses = fragments.masses
-  .map((m) => m.mz)
-  .toSorted((a, b) => a - b);
+const masses = fragments.masses.map((m) => m.mz).toSorted((a, b) => a - b);
 
 // Collect all simulated fragments from unfiltered trees for annotations.
 const allSimFragments = collectSimulatedFragments(fragments.trees);
