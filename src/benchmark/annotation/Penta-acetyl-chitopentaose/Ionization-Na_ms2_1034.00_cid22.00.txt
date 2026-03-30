@@ -1,0 +1,2 @@
+Peak | Intensity | Mechanisms | IsobaricPeakCount
+1056.404242524902 | 4877.660575362402 | Ionization-Na,Ether/water elimination | 344

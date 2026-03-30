@@ -1,0 +1,9 @@
+Peak | Intensity | Mechanisms | IsobaricPeakCount
+365.10678735632507 | 788184.8885764725 | Ether/water elimination | 2
+510.1525799053189 | 83094.72599394221 | Ether/water elimination,Water elimination | 4
+511.15431 | 116732.938865 | Ether/water elimination | 48
+511.1647988407109 | 4864508.912110885 | Ether/water elimination | 48
+512.1681541691288 | 888769.7244103682 | Ether/water elimination | 3
+513.1697637903825 | 194508.66914333962 | Ether/water elimination | 18
+583.1818364081116 | 68265.48112346749 | Ether/water elimination,Water elimination | 18
+657.2229068344948 | 532275.570291589 | Ionization-Na,Ether/water elimination | 138
