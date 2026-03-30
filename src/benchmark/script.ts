@@ -13,8 +13,10 @@
  *   node --watch src/benchmark/script.ts
  */
 
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
+
+import { stringify } from 'ml-spectra-processing';
 
 import type { FragmentationOptions } from './utils/dwar/filterDwarIonization.ts';
 import {
@@ -104,6 +106,33 @@ async function processData() {
       },
     );
 
+    // ── Load raw JCAMP-DX and centroid data for debug output ───────────
+    const dataFolderPath = join(import.meta.dirname, 'data', moleculeName);
+    const originalDataPath = join(dataFolderPath, 'originalData');
+    const centroidsPath = join(dataFolderPath, 'centroids');
+
+    const jcampContents: Record<string, string> = {};
+    for (const spectrum of datum.spectra) {
+      // eslint-disable-next-line no-await-in-loop
+      jcampContents[spectrum.name] = await readFile(
+        join(originalDataPath, spectrum.name),
+        'utf8',
+      );
+    }
+
+    const centroidContents: Record<string, string> = {};
+    // eslint-disable-next-line no-await-in-loop
+    const centroidFiles = await readdir(centroidsPath).catch(
+      () => [] as string[],
+    );
+    for (const centroidFile of centroidFiles) {
+      // eslint-disable-next-line no-await-in-loop
+      centroidContents[centroidFile] = await readFile(
+        join(centroidsPath, centroidFile),
+        'utf8',
+      );
+    }
+
     // ── Build scores table ────────────────────────────────────────────
     const headers = [
       'molecule',
@@ -118,7 +147,50 @@ async function processData() {
     const tableRows: string[][] = [];
     const svgWrites: Array<Promise<void>> = [];
 
-    for (const [adductLabel, { masses, svgs, annotations }] of massesByAdduct) {
+    /** Debug output: per-spectrum, per-adduct data for the JSON file. */
+    interface DebugAdduct {
+      name: string;
+      svg: string;
+      trees: object[];
+      scores: {
+        cosine: number;
+        tanimoto: number;
+        nbCommonPeaks: number;
+        nbPeaks1: number;
+        nbPeaks2: number;
+      };
+      annotations: Array<{
+        peak: number;
+        intensity: number;
+        mechanisms: string[];
+        isobaricPeakCount: number;
+      }>;
+    }
+
+    interface DebugSpectrum {
+      name: string;
+      jcampDX: string;
+      centroid: string;
+      adducts: DebugAdduct[];
+    }
+
+    const debugSpectra: DebugSpectrum[] = [];
+
+    // Initialize debug entries per spectrum.
+    for (const spectrum of datum.spectra) {
+      const centroidFileName = spectrum.name.replace(/\.jdx$/i, '.txt');
+      debugSpectra.push({
+        name: spectrum.name,
+        jcampDX: jcampContents[spectrum.name] ?? '',
+        centroid: centroidContents[centroidFileName] ?? '',
+        adducts: [],
+      });
+    }
+
+    for (const [
+      adductLabel,
+      { masses, svgs, trees, annotations },
+    ] of massesByAdduct) {
       const adductSafe = sanitize(adductLabel);
       console.log(
         `\n── ${moleculeName} / ${adductLabel} (${String(masses.length)} masses) ──`,
@@ -153,6 +225,26 @@ async function processData() {
           svgWrites.push(writeFile(svgPath, svg, 'utf8'));
         }
 
+        // Populate debug data for this adduct/spectrum combination.
+        const debugEntry = debugSpectra.find(
+          (entry) => entry.name === spectrum.name,
+        );
+        if (debugEntry) {
+          debugEntry.adducts.push({
+            name: adductLabel,
+            svg: svgs[spectrum.name] ?? '',
+            trees: trees[spectrum.name] ?? [],
+            scores: {
+              cosine: score.cosine,
+              tanimoto: score.tanimoto,
+              nbCommonPeaks: score.nbCommonPeaks,
+              nbPeaks1: score.nbPeaks1,
+              nbPeaks2: score.nbPeaks2,
+            },
+            annotations: annotations[spectrum.name] ?? [],
+          });
+        }
+
         // Write annotation file when there are matching entries.
         const annotationEntries = annotations[spectrum.name];
         if (annotationEntries && annotationEntries.length > 0) {
@@ -184,6 +276,22 @@ async function processData() {
       ...svgWrites,
     ]);
     console.log(`\nWrote ${tablePath}`);
+
+    // ── Write debug JSON ─────────────────────────────────────────────
+    const outputDir = join(dataFolderPath, 'output');
+    // eslint-disable-next-line no-await-in-loop
+    await mkdir(outputDir, { recursive: true });
+
+    const debugJson = {
+      molecule: moleculeName,
+      molfile: datum.molfile,
+      spectra: debugSpectra,
+    };
+
+    const jsonPath = join(outputDir, 'debug.json');
+    // eslint-disable-next-line no-await-in-loop
+    await writeFile(jsonPath, stringify(debugJson, undefined, 2), 'utf8');
+    console.log(`Wrote ${jsonPath}`);
   }
 }
 

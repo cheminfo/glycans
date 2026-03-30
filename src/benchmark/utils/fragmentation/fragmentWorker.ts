@@ -120,6 +120,7 @@ const allSimFragments = collectSimulatedFragments(fragments.trees);
 
 // For each spectrum: filter trees, build matched peaks, render SVG.
 const svgs: Record<string, string> = {};
+const trees: Record<string, object[]> = {};
 const annotations: Record<
   string,
   Array<{
@@ -170,6 +171,9 @@ for (const spectrum of spectra) {
     }
   }
 
+  // Store filtered trees for debug output.
+  trees[spectrum.name] = filteredReactions.trees;
+
   // Only render SVG when there are actual matched trees.
   if (filteredReactions.trees.length > 0) {
     svgs[spectrum.name] = getFragmentationSVG(filteredReactions.trees, {
@@ -216,4 +220,4 @@ for (const spectrum of spectra) {
   annotations[spectrum.name] = annotEntries;
 }
 
-parentPort!.postMessage({ label, masses, svgs, annotations });
+parentPort!.postMessage({ label, masses, svgs, trees, annotations });

@@ -38,6 +38,8 @@ export interface ParallelAdductResult {
   masses: number[];
   /** Map from spectrum name → rendered SVG string. */
   svgs: Record<string, string>;
+  /** Map from spectrum name → filtered fragmentation trees. */
+  trees: Record<string, object[]>;
   /** Map from spectrum name → annotation entries for matched peaks. */
   annotations: Record<string, AnnotationEntry[]>;
 }
@@ -115,7 +117,7 @@ export async function fragmentByAdductParallel(
   );
 
   const molfile = molecule.toMolfile();
-  const workerUrl = new URL('./fragmentWorker.ts', import.meta.url);
+  const workerUrl = new URL('fragmentWorker.ts', import.meta.url);
 
   const tasks = labels.map((label) => {
     const filteredDwar = filterDwarByIonization(dwar, label);
@@ -125,6 +127,7 @@ export async function fragmentByAdductParallel(
         label: string;
         masses: number[];
         svgs: Record<string, string>;
+        trees: Record<string, object[]>;
         annotations: Record<string, AnnotationEntry[]>;
       }>((resolve, reject) => {
         const worker = new Worker(workerUrl, {
@@ -143,6 +146,7 @@ export async function fragmentByAdductParallel(
               label: string;
               masses: number[];
               svgs: Record<string, string>;
+              trees: Record<string, object[]>;
               annotations: Record<string, AnnotationEntry[]>;
             },
           );
@@ -162,8 +166,8 @@ export async function fragmentByAdductParallel(
   const results = await withConcurrencyLimit(tasks, maxConcurrency);
 
   const map = new Map<string, ParallelAdductResult>();
-  for (const { label, masses, svgs, annotations } of results) {
-    map.set(label, { masses, svgs, annotations });
+  for (const { label, masses, svgs, trees, annotations } of results) {
+    map.set(label, { masses, svgs, trees, annotations });
   }
   return map;
 }

@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "mass-fragmentation": "^1.11.10",
+    "ml-spectra-processing": "^14.22.0",
     "openchemlib-utils": "^8.9.0"
   },
   "devDependencies": {
