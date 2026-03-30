@@ -16,22 +16,16 @@
 export function formatTable(headers: string[], rows: string[][]): string {
   // Compute the max width for each column.
   const widths = headers.map((h, col) =>
-    Math.max(
-      h.length,
-      ...rows.map((row) => (row[col] ?? '').length),
-    ),
+    Math.max(h.length, ...rows.map((row) => (row[col] ?? '').length)),
   );
 
   const pad = (text: string, width: number): string =>
     text + ' '.repeat(Math.max(0, width - text.length));
 
   // Box-drawing borders
-  const topBorder =
-    `┌${widths.map((w) => '─'.repeat(w + 2)).join('┬')}┐`;
-  const midBorder =
-    `├${widths.map((w) => '─'.repeat(w + 2)).join('┼')}┤`;
-  const bottomBorder =
-    `└${widths.map((w) => '─'.repeat(w + 2)).join('┴')}┘`;
+  const topBorder = `┌${widths.map((w) => '─'.repeat(w + 2)).join('┬')}┐`;
+  const midBorder = `├${widths.map((w) => '─'.repeat(w + 2)).join('┼')}┤`;
+  const bottomBorder = `└${widths.map((w) => '─'.repeat(w + 2)).join('┴')}┘`;
 
   const formatRow = (cells: string[]): string =>
     `│ ${cells.map((cell, i) => pad(cell, widths[i] ?? 0)).join(' │ ')} │`;

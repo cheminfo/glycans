@@ -73,11 +73,7 @@ export async function fragmentCandidatesParallel(
   dwar: string,
   options: MassesParallelOptions,
 ): Promise<CandidateAdductMasses[]> {
-  const {
-    fragmentation,
-    maxConcurrency = 3,
-    excludeLabels = [],
-  } = options;
+  const { fragmentation, maxConcurrency = 3, excludeLabels = [] } = options;
 
   const excludeSet = new Set(excludeLabels);
   const labels = getPositiveIonizationLabels(dwar).filter(

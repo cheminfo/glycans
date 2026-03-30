@@ -3,11 +3,7 @@
   "url": "https://chemdata.nist.gov/glycan/spectra/1234527",
   "titleBlock": "6-Sialylgalactose, m/z 472.1661\n\nHi-Res IT 35NCE\n\nMS2, [M+H]+",
   "name": "6-Sialylgalactose",
-  "synonyms": [
-    "Glycan 6-Sialylgalactose",
-    "Glycan MC=h1a1",
-    "NeuAcα2-6Gal"
-  ],
+  "synonyms": ["Glycan 6-Sialylgalactose", "Glycan MC=h1a1", "NeuAcα2-6Gal"],
   "peaks": [
     {
       "mz": "162.0756",
@@ -50,11 +46,7 @@
     "MS Instrument": "Thermo Finnigan Elite Orbitrap",
     "Sample Inlet": "direct flow injection",
     "Ionization Mode": "P",
-    "synonyms": [
-      "Glycan 6-Sialylgalactose",
-      "Glycan MC=h1a1",
-      "NeuAcα2-6Gal"
-    ],
+    "synonyms": ["Glycan 6-Sialylgalactose", "Glycan MC=h1a1", "NeuAcα2-6Gal"],
     "CAS No.": "35259235",
     "NIST No.": "1234527",
     "Notes": [

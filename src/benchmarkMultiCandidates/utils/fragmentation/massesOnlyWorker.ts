@@ -42,8 +42,6 @@ const fragments = reactionFragmentation(molecule, {
   masses: Array<{ mz: number }>;
 };
 
-const masses = fragments.masses
-  .map((m) => m.mz)
-  .toSorted((a, b) => a - b);
+const masses = fragments.masses.map((m) => m.mz).toSorted((a, b) => a - b);
 
 parentPort!.postMessage({ candidateName, label, masses });

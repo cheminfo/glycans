@@ -47,9 +47,7 @@ console.log('Loading candidates and experimental data…');
 const [candidates, data, dwar] = await Promise.all([
   loadCandidates(join(import.meta.dirname, 'candidates')),
   loadData(join(import.meta.dirname, 'data')),
-  loadDwar(
-    join(import.meta.dirname, '../reactions/glycansReactions.dwar'),
-  ),
+  loadDwar(join(import.meta.dirname, '../reactions/glycansReactions.dwar')),
 ]);
 console.log(
   `  ${String(candidates.length)} candidates, ${String(data.length)} data entries  [${elapsed()}]`,

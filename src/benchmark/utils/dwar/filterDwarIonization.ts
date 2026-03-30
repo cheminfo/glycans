@@ -129,10 +129,7 @@ function splitDwar(dwar: string): {
  * @param columnNames - Column names from the DWAR header.
  * @returns A record mapping column names to their values.
  */
-function parseRow(
-  row: string,
-  columnNames: string[],
-): Record<string, string> {
+function parseRow(row: string, columnNames: string[]): Record<string, string> {
   const values = row.split('\t');
   const record: Record<string, string> = {};
   for (let i = 0; i < columnNames.length; i++) {
@@ -249,4 +246,3 @@ export function fragmentByAdduct(
 
   return result;
 }
-

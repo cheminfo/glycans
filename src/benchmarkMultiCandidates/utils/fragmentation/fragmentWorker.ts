@@ -15,7 +15,6 @@
 
 import { parentPort, workerData } from 'node:worker_threads';
 
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { JSDOM } from 'jsdom';
 import { getFragmentationSVG, reactionFragmentation } from 'mass-fragmentation';
 import * as OCL from 'openchemlib';
@@ -62,16 +61,12 @@ const fragments = reactionFragmentation(molecule, {
   trees: object[];
   reactions: {
     getFilteredReactions: (opts: {
-      filter: (node: {
-        molecules: Array<{ info: { mz: number } }>;
-      }) => boolean;
+      filter: (node: { molecules: Array<{ info: { mz: number } }> }) => boolean;
     }) => { trees: object[] };
   };
 };
 
-const masses = fragments.masses
-  .map((m) => m.mz)
-  .toSorted((a, b) => a - b);
+const masses = fragments.masses.map((m) => m.mz).toSorted((a, b) => a - b);
 
 // For each spectrum: filter trees, build matched peaks, render SVG.
 const svgs: Record<string, string> = {};

@@ -101,7 +101,7 @@ export async function fragmentByAdductParallel(
   );
 
   const molfile = molecule.toMolfile();
-  const workerUrl = new URL('./fragmentWorker.ts', import.meta.url);
+  const workerUrl = new URL('fragmentWorker.ts', import.meta.url);
 
   const tasks = labels.map((label) => {
     const filteredDwar = filterDwarByIonization(dwar, label);
@@ -136,9 +136,7 @@ export async function fragmentByAdductParallel(
         worker.on('exit', (code) => {
           if (code !== 0) {
             reject(
-              new Error(
-                `Worker for ${label} exited with code ${String(code)}`,
-              ),
+              new Error(`Worker for ${label} exited with code ${String(code)}`),
             );
           }
         });

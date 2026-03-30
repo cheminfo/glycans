@@ -38,7 +38,10 @@ interface RankingFile {
 
 // ── Parse one ranking file ──────────────────────────────────────────────
 
-function parseRankingFile(content: string, molecule: string): RankingFile | null {
+function parseRankingFile(
+  content: string,
+  molecule: string,
+): RankingFile | null {
   // First line: "Ranking: <molecule> / <adduct> / <spectrum>"
   const headerMatch = content.match(
     /^Ranking:\s+(.+?)\s+\/\s+(.+?)\s+\/\s+(.+)$/m,
@@ -106,10 +109,11 @@ for (const molecule of moleculeDirs) {
   }
 }
 
-allRankings.sort((a, b) =>
-  a.molecule.localeCompare(b.molecule) ||
-  a.adduct.localeCompare(b.adduct) ||
-  a.spectrum.localeCompare(b.spectrum),
+allRankings.sort(
+  (a, b) =>
+    a.molecule.localeCompare(b.molecule) ||
+    a.adduct.localeCompare(b.adduct) ||
+    a.spectrum.localeCompare(b.spectrum),
 );
 
 // ── Build summary rows ──────────────────────────────────────────────────
@@ -185,9 +189,7 @@ function pickBest(
 
   const best: SummaryEntry[] = [];
   for (const [, list] of byMolecule) {
-    list.sort(
-      (a, b) => a[rankKey] - b[rankKey] || b[scoreKey] - a[scoreKey],
-    );
+    list.sort((a, b) => a[rankKey] - b[rankKey] || b[scoreKey] - a[scoreKey]);
     best.push(list[0]!);
   }
 
@@ -196,7 +198,12 @@ function pickBest(
 
 // ── Print Cosine summary ────────────────────────────────────────────────
 
-const bestCosine = pickBest(summaries, 'cosineRank', 'cosineScore', 'cosineBestScore');
+const bestCosine = pickBest(
+  summaries,
+  'cosineRank',
+  'cosineScore',
+  'cosineBestScore',
+);
 
 const cosineHeaders = [
   'molecule',
@@ -227,7 +234,12 @@ console.log(`Wrote ${cosinePath}`);
 
 // ── Print Tanimoto summary ──────────────────────────────────────────────
 
-const bestTanimoto = pickBest(summaries, 'tanimotoRank', 'tanimotoScore', 'tanimotoBestScore');
+const bestTanimoto = pickBest(
+  summaries,
+  'tanimotoRank',
+  'tanimotoScore',
+  'tanimotoBestScore',
+);
 
 const tanimotoHeaders = [
   'molecule',
