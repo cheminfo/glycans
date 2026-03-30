@@ -15,6 +15,7 @@ export { sanitize } from './formatting/sanitize.ts';
 // fragmentation
 export { fragmentByAdductParallel } from './fragmentation/fragmentParallel.ts';
 export type {
+  AnnotationEntry,
   ParallelAdductResult,
   ParallelFragmentationOptions,
 } from './fragmentation/fragmentParallel.ts';

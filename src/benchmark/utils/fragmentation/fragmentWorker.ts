@@ -47,6 +47,52 @@ interface WorkerInput {
   label: string;
 }
 
+// ── Tree-walking helper for annotation ──────────────────────────────────
+
+interface SimulatedFragment {
+  mz: number;
+  label: string;
+}
+
+/**
+ * Walk all fragmentation tree nodes and collect (m/z, mechanism-label) pairs.
+ * Skips root nodes that have no reaction (i.e. the original molecule).
+ */
+function collectSimulatedFragments(trees: object[]): SimulatedFragment[] {
+  const result: SimulatedFragment[] = [];
+
+  function walk(node: unknown): void {
+    if (node === null || typeof node !== 'object') return;
+    const n = node as Record<string, unknown>;
+    const reaction = n.reaction as Record<string, unknown> | undefined;
+    const reactionLabel = reaction?.label;
+    const molecules = n.molecules as
+      | Array<{ info?: { mz?: number } }>
+      | undefined;
+
+    if (typeof reactionLabel === 'string' && Array.isArray(molecules)) {
+      for (const mol of molecules) {
+        const mz = mol?.info?.mz;
+        if (typeof mz === 'number') {
+          result.push({ mz, label: reactionLabel });
+        }
+      }
+    }
+
+    const children = n.children as unknown[] | undefined;
+    if (Array.isArray(children)) {
+      for (const child of children) {
+        walk(child);
+      }
+    }
+  }
+
+  for (const tree of trees) {
+    walk(tree);
+  }
+  return result;
+}
+
 // ── Main worker logic ───────────────────────────────────────────────────
 
 const { molfile, filteredDwar, options, spectra, precision, label } =
@@ -73,8 +119,20 @@ const masses = fragments.masses
   .map((m) => m.mz)
   .toSorted((a, b) => a - b);
 
+// Collect all simulated fragments from unfiltered trees for annotations.
+const allSimFragments = collectSimulatedFragments(fragments.trees);
+
 // For each spectrum: filter trees, build matched peaks, render SVG.
 const svgs: Record<string, string> = {};
+const annotations: Record<
+  string,
+  Array<{
+    peak: number;
+    intensity: number;
+    mechanisms: string[];
+    isobaricPeakCount: number;
+  }>
+> = {};
 
 for (const spectrum of spectra) {
   const experimentalPeaks = spectrum.x.map((mass, i) => ({
@@ -124,6 +182,42 @@ for (const spectrum of spectra) {
       accuracy: precision,
     });
   }
+
+  // ── Build annotation entries ──────────────────────────────────────
+  const annotEntries: Array<{
+    peak: number;
+    intensity: number;
+    mechanisms: string[];
+    isobaricPeakCount: number;
+  }> = [];
+
+  for (let i = 0; i < spectrum.x.length; i++) {
+    const peakMz = spectrum.x[i];
+    const peakIntensity = spectrum.y[i];
+    if (peakMz === undefined || peakIntensity === undefined) continue;
+
+    const tol = peakMz * 1e-6 * precision;
+    const matchingLabels: string[] = [];
+    let isobaricCount = 0;
+
+    for (const frag of allSimFragments) {
+      if (Math.abs(frag.mz - peakMz) <= tol) {
+        matchingLabels.push(frag.label);
+        isobaricCount++;
+      }
+    }
+
+    if (isobaricCount > 0) {
+      annotEntries.push({
+        peak: peakMz,
+        intensity: peakIntensity,
+        mechanisms: [...new Set(matchingLabels)],
+        isobaricPeakCount: isobaricCount,
+      });
+    }
+  }
+
+  annotations[spectrum.name] = annotEntries;
 }
 
-parentPort!.postMessage({ label, masses, svgs });
+parentPort!.postMessage({ label, masses, svgs, annotations });

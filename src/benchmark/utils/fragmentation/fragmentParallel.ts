@@ -20,12 +20,26 @@ import {
   getPositiveIonizationLabels,
 } from '../dwar/filterDwarIonization.ts';
 
+/** A single annotation entry for a matched experimental peak. */
+export interface AnnotationEntry {
+  /** Experimental m/z value. */
+  peak: number;
+  /** Experimental intensity. */
+  intensity: number;
+  /** Unique mechanism labels that can produce this peak. */
+  mechanisms: string[];
+  /** Number of simulated fragments collapsing to this m/z. */
+  isobaricPeakCount: number;
+}
+
 /** Result from parallel per-adduct fragmentation (includes SVGs). */
 export interface ParallelAdductResult {
   /** Sorted array of predicted m/z values. */
   masses: number[];
   /** Map from spectrum name → rendered SVG string. */
   svgs: Record<string, string>;
+  /** Map from spectrum name → annotation entries for matched peaks. */
+  annotations: Record<string, AnnotationEntry[]>;
 }
 
 /** Options controlling parallel fragmentation behaviour. */
@@ -111,6 +125,7 @@ export async function fragmentByAdductParallel(
         label: string;
         masses: number[];
         svgs: Record<string, string>;
+        annotations: Record<string, AnnotationEntry[]>;
       }>((resolve, reject) => {
         const worker = new Worker(workerUrl, {
           workerData: {
@@ -128,6 +143,7 @@ export async function fragmentByAdductParallel(
               label: string;
               masses: number[];
               svgs: Record<string, string>;
+              annotations: Record<string, AnnotationEntry[]>;
             },
           );
           void worker.terminate();
@@ -136,9 +152,7 @@ export async function fragmentByAdductParallel(
         worker.on('exit', (code) => {
           if (code !== 0) {
             reject(
-              new Error(
-                `Worker for ${label} exited with code ${String(code)}`,
-              ),
+              new Error(`Worker for ${label} exited with code ${String(code)}`),
             );
           }
         });
@@ -148,8 +162,8 @@ export async function fragmentByAdductParallel(
   const results = await withConcurrencyLimit(tasks, maxConcurrency);
 
   const map = new Map<string, ParallelAdductResult>();
-  for (const { label, masses, svgs } of results) {
-    map.set(label, { masses, svgs });
+  for (const { label, masses, svgs, annotations } of results) {
+    map.set(label, { masses, svgs, annotations });
   }
   return map;
 }

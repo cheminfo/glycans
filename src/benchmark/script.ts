@@ -39,6 +39,8 @@ const dwar = await loadDwar(
 const resultsDir = join(import.meta.dirname, 'results');
 await mkdir(resultsDir, { recursive: true });
 
+const annotationBaseDir = join(import.meta.dirname, 'annotation');
+
 // ── Scoring parameters ──────────────────────────────────────────────────
 const massPower = 3;
 const intensityPower = 0.6;
@@ -79,6 +81,10 @@ async function processData() {
     // eslint-disable-next-line no-await-in-loop
     await mkdir(moleculeDir, { recursive: true });
 
+    const annotationMolDir = join(annotationBaseDir, sanitize(moleculeName));
+    // eslint-disable-next-line no-await-in-loop
+    await mkdir(annotationMolDir, { recursive: true });
+
     const spectraData = datum.spectra.map((s) => ({
       name: s.name,
       x: s.value.x,
@@ -112,7 +118,7 @@ async function processData() {
     const tableRows: string[][] = [];
     const svgWrites: Array<Promise<void>> = [];
 
-    for (const [adductLabel, { masses, svgs }] of massesByAdduct) {
+    for (const [adductLabel, { masses, svgs, annotations }] of massesByAdduct) {
       const adductSafe = sanitize(adductLabel);
       console.log(
         `\n── ${moleculeName} / ${adductLabel} (${String(masses.length)} masses) ──`,
@@ -145,6 +151,26 @@ async function processData() {
             `${adductSafe}_${spectrumSafe}.svg`,
           );
           svgWrites.push(writeFile(svgPath, svg, 'utf8'));
+        }
+
+        // Write annotation file when there are matching entries.
+        const annotationEntries = annotations[spectrum.name];
+        if (annotationEntries && annotationEntries.length > 0) {
+          const annotationLines = [
+            'Peak | Intensity | Mechanisms | IsobaricPeakCount',
+          ];
+          for (const entry of annotationEntries) {
+            annotationLines.push(
+              `${String(entry.peak)} | ${String(entry.intensity)} | ${entry.mechanisms.join(',')} | ${String(entry.isobaricPeakCount)}`,
+            );
+          }
+          const annotationPath = join(
+            annotationMolDir,
+            `${adductSafe}_${spectrumSafe}.txt`,
+          );
+          svgWrites.push(
+            writeFile(annotationPath, annotationLines.join('\n'), 'utf8'),
+          );
         }
       }
     }
