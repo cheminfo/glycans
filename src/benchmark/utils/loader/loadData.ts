@@ -65,14 +65,18 @@ export async function loadData(basePath: string): Promise<MoleculeData[]> {
       const molfile = await readFile(join(folderPath, molfileName), 'utf8');
       const molecule = Molecule.fromMolfile(molfile);
 
-      // Collect MS2 JCAMP-DX spectra
-      const jcampNames = files
+      // Collect MS2 JCAMP-DX spectra from the originalData subfolder
+      const originalDataPath = join(folderPath, 'originalData');
+      const originalDataFiles = await readdir(originalDataPath).catch(
+        () => [] as string[],
+      );
+      const jcampNames = originalDataFiles
         .filter((file) => file.toLowerCase().endsWith('.jdx'))
         .filter((file) => file.toLowerCase().includes('ms2'));
 
       const spectra: SpectrumEntry[] = await Promise.all(
         jcampNames.map(async (name): Promise<SpectrumEntry> => {
-          const jcamp = await readFile(join(folderPath, name), 'utf8');
+          const jcamp = await readFile(join(originalDataPath, name), 'utf8');
           const converted = convert(jcamp);
 
           const entry = converted.flatten[0];

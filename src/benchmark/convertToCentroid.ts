@@ -1,8 +1,6 @@
 /**
  * Convert all profile MS2 spectra to centroid and output one `.txt` file per
- * spectrum, named after the molecule folder and the original JCAMP filename.
- *
- * Output directory: `centroidSpectra/` (relative to this script).
+ * spectrum into the `centroids/` subfolder of each molecule folder.
  *
  * Usage:
  *   npx tsx src/benchmark/convertToCentroid.ts
@@ -17,25 +15,29 @@ import { Spectrum } from 'ms-spectrum';
 /* eslint-disable no-console */
 
 const dataDir = join(import.meta.dirname, 'data');
-const outputDir = join(import.meta.dirname, 'centroidSpectra');
-
-await mkdir(outputDir, { recursive: true });
 
 const dirEntries = await readdir(dataDir, { withFileTypes: true });
 const folders = dirEntries.filter((d) => d.isDirectory()).map((d) => d.name);
 
 let totalFiles = 0;
+const writes: Array<Promise<void>> = [];
 
 for (const folder of folders) {
-  const folderPath = join(dataDir, folder);
-  const files = await readdir(folderPath);
+  const originalDataPath = join(dataDir, folder, 'originalData');
+  const centroidsDir = join(dataDir, folder, 'centroids');
+  // eslint-disable-next-line no-await-in-loop
+  await mkdir(centroidsDir, { recursive: true });
+
+  // eslint-disable-next-line no-await-in-loop
+  const files = await readdir(originalDataPath).catch(() => [] as string[]);
 
   const jcampFiles = files
     .filter((f) => f.toLowerCase().endsWith('.jdx'))
     .filter((f) => f.toLowerCase().includes('ms2'));
 
   for (const jcampName of jcampFiles) {
-    const jcamp = await readFile(join(folderPath, jcampName), 'utf8');
+    // eslint-disable-next-line no-await-in-loop
+    const jcamp = await readFile(join(originalDataPath, jcampName), 'utf8');
     const converted = convert(jcamp);
 
     const entry = converted.flatten[0];
@@ -57,16 +59,21 @@ for (const folder of folders) {
       lines.push(`${centroid.x[i]}\t${centroid.y[i]}`);
     }
 
-    // Output filename: "MoleculeName_spectrumFile.txt"
     const baseName = jcampName.replace(/\.jdx$/i, '');
-    const outName = `${folder}_${baseName}.txt`;
-    await writeFile(join(outputDir, outName), lines.join('\n'), 'utf8');
+    const outName = `${baseName}.txt`;
+    writes.push(
+      writeFile(join(centroidsDir, outName), lines.join('\n'), 'utf8'),
+    );
 
     totalFiles++;
-    console.log(`✔ ${outName}  (${centroid.x.length} peaks)`);
+    console.log(
+      `✔ ${folder}/centroids/${outName}  (${centroid.x.length} peaks)`,
+    );
   }
 }
 
+await Promise.all(writes);
+
 console.log(
-  `\nDone — ${totalFiles} centroid file(s) written to centroidSpectra/`,
+  `\nDone — ${totalFiles} centroid file(s) written to data/<molecule>/centroids/`,
 );

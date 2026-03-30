@@ -23,12 +23,8 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
 import { convert } from 'jcampconverter';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { JSDOM } from 'jsdom';
-import {
-  getFragmentationSVG,
-  reactionFragmentation,
-} from 'mass-fragmentation';
+import { getFragmentationSVG, reactionFragmentation } from 'mass-fragmentation';
 import { Spectrum } from 'ms-spectrum';
 import * as OCL from 'openchemlib';
 
@@ -76,6 +72,7 @@ const PRECURSOR_PPM = 20;
 // ═══════════════════════════════════════════════════════════════════════
 
 const dataDir = join(import.meta.dirname, 'data', MOLECULE_FOLDER);
+const originalDataDir = join(dataDir, 'originalData');
 const resultsDir = join(
   import.meta.dirname,
   'results',
@@ -88,7 +85,7 @@ const molfile = await readFile(join(dataDir, 'molecule.mol'), 'utf8');
 const molecule = OCL.Molecule.fromMolfile(molfile);
 
 // ── Load MS3 spectrum ───────────────────────────────────────────────────
-const jcamp = await readFile(join(dataDir, MS3_FILE), 'utf8');
+const jcamp = await readFile(join(originalDataDir, MS3_FILE), 'utf8');
 const converted = convert(jcamp);
 const entry = converted.flatten[0];
 const spectrumData = entry?.spectra[0]?.data;
@@ -150,9 +147,9 @@ interface TreeNode {
 
 interface Reactions {
   trees: TreeNode[];
-  getFilteredReactions: (opts: {
-    filter: (node: TreeNode) => boolean;
-  }) => { trees: TreeNode[] };
+  getFilteredReactions: (opts: { filter: (node: TreeNode) => boolean }) => {
+    trees: TreeNode[];
+  };
 }
 
 /**
@@ -209,9 +206,7 @@ function collectDescendantNodes(node: TreeNode): TreeNode[] {
  * correctly rejected, even though another path 511 → … → 365 exists.
  * @param precursorNodes
  */
-function buildDescendantNodeSet(
-  precursorNodes: TreeNode[],
-): Set<TreeNode> {
+function buildDescendantNodeSet(precursorNodes: TreeNode[]): Set<TreeNode> {
   const nodeSet = new Set<TreeNode>();
   for (const precursor of precursorNodes) {
     for (const desc of collectDescendantNodes(precursor)) {
@@ -354,7 +349,10 @@ function verifyFilteredTree(
   }
 
   lines.push('');
-  lines.push(`Edge summary: ${String(edgeCount)} edges, ${String(validEdges)} valid, ${String(invalidEdges)} INVALID`, '');
+  lines.push(
+    `Edge summary: ${String(edgeCount)} edges, ${String(validEdges)} valid, ${String(invalidEdges)} INVALID`,
+    '',
+  );
 
   // For each leaf node that matches an experimental peak, print ancestor path.
   function collectLeaves(node: TreeNode): TreeNode[] {
@@ -402,7 +400,8 @@ function verifyFilteredTree(
 
     const passes511 = ancestorUids.some((u) => precursorUids.has(u));
     lines.push(
-      `peak ${matchedPeak.mass.toFixed(4)} matched node uid${String(uid)}(${mz.toFixed(4)}) passes_through_511=${String(passes511)}`, `  path: ${pathStr}`
+      `peak ${matchedPeak.mass.toFixed(4)} matched node uid${String(uid)}(${mz.toFixed(4)}) passes_through_511=${String(passes511)}`,
+      `  path: ${pathStr}`,
     );
   }
 
@@ -444,13 +443,14 @@ for (const adductLabel of ionLabels) {
     reactions: Reactions;
   };
 
-  const allMasses = fragments.masses
-    .map((m) => m.mz)
-    .toSorted((a, b) => a - b);
+  const allMasses = fragments.masses.map((m) => m.mz).toSorted((a, b) => a - b);
 
   // ── Assign UIDs to the original tree ──────────────────────────────
-  const { parentMap: origParentMap, childrenMap: origChildrenMap, uidToNode } =
-    assignUidsAndBuildMaps(fragments.trees);
+  const {
+    parentMap: origParentMap,
+    childrenMap: origChildrenMap,
+    uidToNode,
+  } = assignUidsAndBuildMaps(fragments.trees);
 
   // ── Find precursor nodes ──────────────────────────────────────────
   const precursorNodes = findPrecursorNodes(
@@ -491,7 +491,9 @@ for (const adductLabel of ionLabels) {
   // valid path.
   const descendantNodeSet = buildDescendantNodeSet(precursorNodes);
   const descendantMasses = extractMasses(descendantNodeSet);
-  console.log(`  Descendant nodes: ${String(descendantNodeSet.size)}, unique masses: ${String(descendantMasses.length)}`);
+  console.log(
+    `  Descendant nodes: ${String(descendantNodeSet.size)}, unique masses: ${String(descendantMasses.length)}`,
+  );
 
   // ── Score subtree masses against MS3 ──────────────────────────────
   const subtreeScore = scoreSpectrum(comparator, ms3, descendantMasses);
