@@ -3,7 +3,7 @@
  * spectrum into the `centroids/` subfolder of each molecule folder.
  *
  * Usage:
- *   npx tsx src/benchmark/convertToCentroid.ts
+ *   npx tsx benchmark/convertToCentroid.ts
  */
 
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';

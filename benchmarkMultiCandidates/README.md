@@ -552,13 +552,13 @@ For the condensed summaries, the script picks one (adduct × spectrum) per molec
 ### Running the main benchmark
 
 ```bash
-node --no-warnings src/benchmarkMultiCandidates/script.ts
+node --no-warnings benchmarkMultiCandidates/script.ts
 ```
 
 ### Running the post-processor
 
 ```bash
-node --no-warnings src/benchmarkMultiCandidates/printRanks.ts
+node --no-warnings benchmarkMultiCandidates/printRanks.ts
 ```
 
 > **Note:** `printRanks.ts` must be run **after** `script.ts` because it reads the ranking files from `results/`.

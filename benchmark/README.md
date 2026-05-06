@@ -486,7 +486,7 @@ benchmark/
 4. Peak-picks via `new Spectrum({ x, y }).getPeaksAsDataXY({})`.
 5. Writes `centroidSpectra/{molecule}_{spectrum}.txt` with `m/z\tintensity` columns.
 
-**Usage:** `npx tsx src/benchmark/convertToCentroid.ts`
+**Usage:** `npx tsx benchmark/convertToCentroid.ts`
 
 ---
 
@@ -521,7 +521,7 @@ benchmark/
 - `results/{molecule}-ms3/{adduct}_subtree-{mz}.svg` — SVG of the filtered subtree.
 - `results/{molecule}-ms3/{adduct}_subtree-verification.log` — Detailed edge verification log.
 
-**Usage:** `node --no-warnings src/benchmark/quickMs3.ts`
+**Usage:** `node --no-warnings benchmark/quickMs3.ts`
 
 ---
 
@@ -638,19 +638,19 @@ predicted fragments(molecule, adduct) vs. experimental MS2(molecule)
 ### Running the main benchmark
 
 ```bash
-node --no-warnings src/benchmark/script.ts
+node --no-warnings benchmark/script.ts
 ```
 
 Or with watch mode for development:
 
 ```bash
-node --watch src/benchmark/script.ts
+node --watch benchmark/script.ts
 ```
 
 ### Running the centroid converter
 
 ```bash
-npx tsx src/benchmark/convertToCentroid.ts
+npx tsx benchmark/convertToCentroid.ts
 ```
 
 ### Running the MS3 analysis
@@ -658,7 +658,7 @@ npx tsx src/benchmark/convertToCentroid.ts
 Edit the configuration constants in `quickMs3.ts` first, then:
 
 ```bash
-node --no-warnings src/benchmark/quickMs3.ts
+node --no-warnings benchmark/quickMs3.ts
 ```
 
 ### Required input files

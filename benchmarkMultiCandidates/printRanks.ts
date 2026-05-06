@@ -8,7 +8,7 @@
  * 3. Prints a "Cosine ranking" summary and a "Tanimoto ranking" summary.
  *
  * Usage:
- *   node --no-warnings src/benchmarkMultiCandidates/printRanks.ts
+ *   node --no-warnings benchmarkMultiCandidates/printRanks.ts
  */
 
 import { readFile, readdir, writeFile } from 'node:fs/promises';

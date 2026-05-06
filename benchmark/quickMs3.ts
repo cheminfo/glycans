@@ -16,7 +16,7 @@
  *  PRECURSOR_PPM    — accuracy (ppm) for matching the precursor node
  *
  * Usage:
- *   node --no-warnings src/benchmark/quickMs3.ts
+ *   node --no-warnings benchmark/quickMs3.ts
  */
 
 import { mkdir, readFile, writeFile } from 'node:fs/promises';

@@ -16,7 +16,7 @@
  *   table for every combination.
  *
  * Usage:
- *   node --no-warnings src/benchmarkMultiCandidates/script.ts
+ *   node --no-warnings benchmarkMultiCandidates/script.ts
  */
 
 import { mkdir, writeFile } from 'node:fs/promises';

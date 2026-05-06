@@ -3,6 +3,16 @@ import { Molecule } from 'openchemlib';
 import type { ParsedLink } from './parseIupacCondensed.ts';
 import { parseIupacCondensed } from './parseIupacCondensed.ts';
 
+/**
+ * Build an OpenChemLib `Molecule` from an IUPAC condensed glycan string.
+ *
+ * Each sugar unit is loaded from its SMILES, atoms are labeled with their
+ * ring position, and units are then connected via α/β glycosidic bonds at
+ * the positions encoded in the link parts (e.g. `(α1-3)`). The displaced
+ * anomeric oxygen is removed at every junction.
+ * @param iupac - IUPAC condensed glycan, e.g. `Glc(α1-3)Glc(β1-4)Glc`.
+ * @returns The assembled molecule.
+ */
 export function getMoleculeFromIupacCondensed(iupac: string): Molecule {
   const parsed = parseIupacCondensed(iupac);
 

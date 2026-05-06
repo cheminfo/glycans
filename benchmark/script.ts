@@ -10,7 +10,7 @@
  *   the tree is non-empty).
  *
  * Usage:
- *   node --watch src/benchmark/script.ts
+ *   node --watch benchmark/script.ts
  */
 
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';

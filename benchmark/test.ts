@@ -3,8 +3,8 @@ import { exit } from 'node:process';
 
 import { Molecule } from 'openchemlib';
 
-import { labelUnitAtoms } from './labelUnitAtoms.ts';
-import { iupacCondensedObject as sugarByAbbreviation } from './sugars.ts';
+import { labelUnitAtoms } from '../src/labelUnitAtoms.ts';
+import { iupacCondensedObject as sugarByAbbreviation } from '../src/sugars.ts';
 
 const units = [
   {

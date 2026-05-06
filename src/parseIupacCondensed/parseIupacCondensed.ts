@@ -5,9 +5,11 @@ import { iupacCondensedObject as sugarByIupacCondensed } from '../sugars.ts';
 
 import { labelUnitAtoms } from './labelUnitAtoms.ts';
 
-// use a regalar expression to split at all the units
+// Sort by length descending so longer names like "GlcNAc" match before "Glc".
 const regex = new RegExp(
-  `(${Object.keys(sugarByIupacCondensed).join('|')})`,
+  `(${Object.keys(sugarByIupacCondensed)
+    .toSorted((a, b) => b.length - a.length)
+    .join('|')})`,
   'g',
 );
 
@@ -31,6 +33,17 @@ export interface ParsedIupacCondensed {
   links: ParsedLink[];
 }
 
+/**
+ * Parse an IUPAC condensed glycan string into its sugar units and the
+ * glycosidic links between them. Each unit is loaded from its reference
+ * SMILES and labeled by `labelUnitAtoms`; each link captures the donor and
+ * acceptor unit indices, the link part as written (e.g. `(α1-3)`), and the
+ * relative-stereo reference atom from the donor unit.
+ * @param iupac - IUPAC condensed glycan, e.g. `Glc(α1-3)Glc(β1-4)Glc`.
+ * @returns The parsed units and links, ready to be assembled into a single
+ *   molecule.
+ * @throws {Error} If a substring is not a known sugar unit.
+ */
 export function parseIupacCondensed(iupac: string): ParsedIupacCondensed {
   const parts = iupac.split(regex).filter(Boolean);
 

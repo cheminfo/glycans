@@ -11,8 +11,13 @@ interface IupacPart {
 }
 
 /**
+ * Build an OpenChemLib `Molecule` from an IUPAC condensed glycan string.
+ *
+ * Stub implementation kept for reference — see
+ * `getMoleculeFromIupacCondensed` for the working version.
  * @see https://www.glycoforum.gr.jp/article/22A2.html#mokuji02
- * @param iupac
+ * @param iupac - IUPAC condensed glycan, e.g. `NeuAc(α2-3)Gal(β1-4)GlcNAc`.
+ * @returns An (empty) molecule placeholder.
  */
 export function fromIupacCondensed(iupac: string): Molecule {
   getParts(iupac);
