@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.2.0](https://github.com/cheminfo/glycans/compare/v0.1.0...v0.2.0) (2026-05-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* getMoleculeFromIupacCondensed, parseIupacCondensed and fromIupacCondensed now take the openchemlib module as their first argument. Callers must update their call sites and install openchemlib themselves (it is now a peerDependency).
+
+### Features
+
+* take openchemlib as a parameter instead of importing it ([7b60c16](https://github.com/cheminfo/glycans/commit/7b60c16ef17485ac8f2afbef28fc487a6fbc2713))
+
+
+### Miscellaneous Chores
+
+* release as 0.2.0 ([37dd978](https://github.com/cheminfo/glycans/commit/37dd97871a56853b7c10da8c27fffa3c5adfa215))
+
 ## [0.1.0](https://github.com/cheminfo/glycans/compare/v0.0.0...v0.1.0) (2026-05-06)
 
 
