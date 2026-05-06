@@ -1,8 +1,6 @@
-import { writeFileSync } from 'node:fs';
-import { join } from 'node:path';
-
 import { Molecule } from 'openchemlib';
 
+import type { ParsedLink } from './parseIupacCondensed.ts';
 import { parseIupacCondensed } from './parseIupacCondensed.ts';
 
 export function getMoleculeFromIupacCondensed(iupac: string): Molecule {
@@ -10,7 +8,7 @@ export function getMoleculeFromIupacCondensed(iupac: string): Molecule {
 
   const molecule = new Molecule(0, 0);
   for (const unit of parsed.units) {
-    molecule.addMolecule(unit.molecule);
+    if (unit.molecule) molecule.addMolecule(unit.molecule);
   }
 
   molecule.inventCoordinates();
@@ -21,24 +19,29 @@ export function getMoleculeFromIupacCondensed(iupac: string): Molecule {
 
   molecule.ensureHelperArrays(Molecule.cHelperAll);
   molecule.inventCoordinates();
-  writeFileSync(join(import.meta.dirname, 'debug.mol'), molecule.toMolfile());
-  console.log(molecule.toMolfile());
 
   return molecule;
 }
 
-function addBond(molecule: Molecule, link): void {
-  const parts = link.type.match(/([^\d]+)([0-9]+)\-([0-9]+)$/).slice(1);
+function addBond(molecule: Molecule, link: ParsedLink): void {
+  const parts = link.type.match(/([^\d]+)([0-9]+-[0-9]+)$/)?.slice(1);
+  if (!parts) throw new Error(`Invalid link type: ${link.type}`);
 
-  const from = `${link.from}_${parts[1]}`;
-  const to = `${link.to}_${parts[2]}`;
-  const type = ['alpha', '⍺', 'α'].includes(parts[0]) ? 'alpha' : 'beta';
+  const [rawType, positions] = parts;
+  if (!positions) {
+    throw new Error(`Invalid link type format: ${link.type}`);
+  }
+  const [fromPos, toPos] = positions.split('-');
+  const from = `${String(link.from)}_${fromPos ?? ''}`;
+  const to = `${String(link.to)}_${toPos ?? ''}`;
+  const type = ['alpha', '⍺', 'α'].includes(rawType ?? '') ? 'alpha' : 'beta';
 
   const atom1 = findAtomByLabel(molecule, from);
   const linkedOxygen1 = getLinkedOxygenAtom(molecule, atom1);
   const atom2 = findAtomByLabel(molecule, to);
   const linkedOxygen2 = getLinkedOxygenAtom(molecule, atom2);
 
+  if (!link.relativeStereoFrom) throw new Error('Missing relativeStereoFrom');
   const relativeStereoFromAtom = findAtomByLabel(
     molecule,
     link.relativeStereoFrom,
@@ -55,11 +58,8 @@ function addBond(molecule: Molecule, link): void {
           ? Molecule.cBondTypeDown
           : Molecule.cBondTypeUp),
     );
-  } else if (type === 'beta') {
-    molecule.setBondType(bond, Molecule.cBondTypeSingle | relativeChirality);
   } else {
-    console.error(`Unknown bond type: ${type}`);
-    exit(1);
+    molecule.setBondType(bond, Molecule.cBondTypeSingle | relativeChirality);
   }
   molecule.deleteAtom(linkedOxygen1);
 }
@@ -77,8 +77,7 @@ function getChiralBondKind(molecule: Molecule, atom: number): number {
       return bondType & Molecule.cBondTypeDown;
     }
   }
-  console.error(`No chiral bond found for atom ${atom}`);
-  exit(1);
+  throw new Error(`No chiral bond found for atom ${atom}`);
 }
 
 function getLinkedOxygenAtom(molecule: Molecule, atom: number): number {
@@ -92,8 +91,7 @@ function getLinkedOxygenAtom(molecule: Molecule, atom: number): number {
       return connectedAtom;
     }
   }
-  console.error(`No oxygen atom linked to atom ${atom}`);
-  exit(1);
+  throw new Error(`No oxygen atom linked to atom ${atom}`);
 }
 
 function findAtomByLabel(molecule: Molecule, label: string): number {
@@ -104,6 +102,5 @@ function findAtomByLabel(molecule: Molecule, label: string): number {
       return i;
     }
   }
-  console.error(`Atom with label ${label} not found`);
-  exit(1);
+  throw new Error(`Atom with label ${label} not found`);
 }

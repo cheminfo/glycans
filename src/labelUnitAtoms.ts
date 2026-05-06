@@ -9,7 +9,6 @@ export function labelUnitAtoms(molecule: Molecule): void {
     const nbMatch = applyFragmentLabels(molecule, template, {
       algorithm: 'firstMatch',
     });
-    console.log(nbMatch);
     if (nbMatch > 0) {
       break;
     }

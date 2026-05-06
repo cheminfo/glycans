@@ -21,7 +21,7 @@ import * as OCL from 'openchemlib';
 
 // ── DOM setup (required by react-tree-svg inside getFragmentationSVG) ───
 const dom = new JSDOM('<!DOCTYPE html><html><body></body></html>');
-globalThis.document = dom.window.document as unknown as Document;
+globalThis.document = dom.window.document;
 globalThis.window = dom.window as unknown as Window & typeof globalThis;
 Object.defineProperty(globalThis, 'navigator', {
   value: dom.window.navigator,
@@ -220,4 +220,7 @@ for (const spectrum of spectra) {
   annotations[spectrum.name] = annotEntries;
 }
 
-parentPort!.postMessage({ label, masses, svgs, trees, annotations });
+if (!parentPort) {
+  throw new Error('parentPort is null — not running in a worker thread');
+}
+parentPort.postMessage({ label, masses, svgs, trees, annotations });

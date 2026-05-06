@@ -116,9 +116,11 @@ dist
 .pnp.*
 
 .DS_Store
+.claude
 
 lib
 scripts/icons/downloaded_icons/
 
 /src/benchmark/results
+/src/benchmark/data/**/output/
 /src/benchmarkMultiCandidates/results

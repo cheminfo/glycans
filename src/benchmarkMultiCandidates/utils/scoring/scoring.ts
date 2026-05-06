@@ -53,5 +53,5 @@ export function scoreSpectrum(
   spectrum: { x: number[]; y: number[] },
   masses: number[],
 ): ScoringResult {
-  return comparator.getSimilarityToMasses(spectrum, masses) as ScoringResult;
+  return comparator.getSimilarityToMasses(spectrum, masses);
 }

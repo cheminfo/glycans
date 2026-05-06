@@ -47,7 +47,10 @@ async function withConcurrencyLimit<T>(
   async function lane(): Promise<void> {
     while (nextIndex < tasks.length) {
       const i = nextIndex++;
-      results[i] = await tasks[i]!();
+      const task = tasks[i];
+      if (!task) break;
+      // eslint-disable-next-line no-await-in-loop -- intentional sequential processing within concurrency lane
+      results[i] = await task();
     }
   }
 
@@ -93,7 +96,8 @@ export async function fragmentCandidatesParallel(
 
   for (const candidate of candidates) {
     for (const label of labels) {
-      const filteredDwar = filteredDwars.get(label)!;
+      const filteredDwar = filteredDwars.get(label);
+      if (!filteredDwar) continue;
 
       tasks.push(
         () =>

@@ -48,8 +48,8 @@ function parseRankingFile(
   );
   if (!headerMatch) return null;
 
-  const adduct = headerMatch[2]!.trim();
-  const spectrum = headerMatch[3]!.trim();
+  const adduct = (headerMatch[2] ?? '').trim();
+  const spectrum = (headerMatch[3] ?? '').trim();
 
   // Parse table rows — data rows start with "│" and contain numbers.
   // Columns: rank │ candidate │ cosine │ tanimoto │ nbCommonPeaks │ nbPeaks1 │ nbPeaks2 │ solution
@@ -68,16 +68,16 @@ function parseRankingFile(
     // Need at least 8 columns; skip the header row (contains "rank")
     if (cells.length < 8 || cells[0] === 'rank') continue;
 
-    const rank = Number.parseInt(cells[0]!, 10);
+    const rank = Number.parseInt(cells[0] ?? '', 10);
     if (Number.isNaN(rank)) continue;
 
     candidates.push({
       rank,
-      candidate: cells[1]!,
-      cosine: Number.parseFloat(cells[2]!),
-      tanimoto: Number.parseFloat(cells[3]!),
-      nbCommonPeaks: Number.parseInt(cells[4]!, 10),
-      isSolution: cells[7]!.includes('✓'),
+      candidate: cells[1] ?? '',
+      cosine: Number.parseFloat(cells[2] ?? ''),
+      tanimoto: Number.parseFloat(cells[3] ?? ''),
+      nbCommonPeaks: Number.parseInt(cells[4] ?? '', 10),
+      isSolution: (cells[7] ?? '').includes('✓'),
     });
   }
 
@@ -100,9 +100,12 @@ const allRankings: RankingFile[] = [];
 
 for (const molecule of moleculeDirs) {
   const dir = join(resultsDir, molecule);
-  const files = (await readdir(dir)).filter((f) => f.startsWith('ranking_'));
+  // eslint-disable-next-line no-await-in-loop -- sequential directory listing is intentional
+  const allFiles = await readdir(dir);
+  const files = allFiles.filter((f) => f.startsWith('ranking_'));
 
   for (const file of files) {
+    // eslint-disable-next-line no-await-in-loop -- sequential file reads are intentional
     const content = await readFile(join(dir, file), 'utf8');
     const parsed = parseRankingFile(content, molecule);
     if (parsed) allRankings.push(parsed);
@@ -137,15 +140,14 @@ const summaries: SummaryEntry[] = allRankings.map((r) => {
   // Cosine ranking (already sorted by cosine in the file).
   const byCosine = [...r.candidates].toSorted((a, b) => b.cosine - a.cosine);
   const cosineIdx = byCosine.findIndex((c) => c.isSolution);
-  const cosineSolution = cosineIdx !== -1 ? byCosine[cosineIdx]! : undefined;
+  const cosineSolution = byCosine.find((c) => c.isSolution);
 
   // Tanimoto ranking (re-sort by tanimoto).
   const byTanimoto = [...r.candidates].toSorted(
     (a, b) => b.tanimoto - a.tanimoto,
   );
   const tanimotoIdx = byTanimoto.findIndex((c) => c.isSolution);
-  const tanimotoSolution =
-    tanimotoIdx !== -1 ? byTanimoto[tanimotoIdx]! : undefined;
+  const tanimotoSolution = byTanimoto.find((c) => c.isSolution);
 
   return {
     molecule: r.molecule,
@@ -190,7 +192,8 @@ function pickBest(
   const best: SummaryEntry[] = [];
   for (const [, list] of byMolecule) {
     list.sort((a, b) => a[rankKey] - b[rankKey] || b[scoreKey] - a[scoreKey]);
-    best.push(list[0]!);
+    const first = list[0];
+    if (first) best.push(first);
   }
 
   return best.toSorted((a, b) => a.molecule.localeCompare(b.molecule));

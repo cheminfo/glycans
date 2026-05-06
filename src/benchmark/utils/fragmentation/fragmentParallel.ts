@@ -79,7 +79,10 @@ async function withConcurrencyLimit<T>(
   async function lane(): Promise<void> {
     while (nextIndex < tasks.length) {
       const i = nextIndex++;
-      results[i] = await tasks[i]!();
+      const task = tasks[i];
+      if (!task) break;
+      // eslint-disable-next-line no-await-in-loop -- intentional sequential processing within concurrency lane
+      results[i] = await task();
     }
   }
 

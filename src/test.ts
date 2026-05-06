@@ -1,9 +1,10 @@
+/* eslint-disable no-console */
 import { exit } from 'node:process';
 
 import { Molecule } from 'openchemlib';
 
 import { labelUnitAtoms } from './labelUnitAtoms.ts';
-import { sugarByAbbreviation } from './sugars.ts';
+import { iupacCondensedObject as sugarByAbbreviation } from './sugars.ts';
 
 const units = [
   {
@@ -25,7 +26,7 @@ const units = [
 
 const molecule = new Molecule(0, 0);
 for (const unit of units) {
-  labelUnitAtoms(unit);
+  labelUnitAtoms(unit.molecule);
   molecule.addMolecule(unit.molecule);
 }
 
@@ -50,7 +51,14 @@ molecule.inventCoordinates();
 
 console.log(molecule.toMolfile());
 
-function addBond(molecule: Molecule, options): void {
+interface BondOptions {
+  from: string;
+  to: string;
+  type: string;
+  relativeTo: string;
+}
+
+function addBond(molecule: Molecule, options: BondOptions): void {
   const { from, to, type, relativeTo } = options;
   const atom1 = findAtomByLabel(molecule, from);
   const linkedOxygen1 = getLinkedOxygenAtom(molecule, atom1);

@@ -1,0 +1,13 @@
+name: Deploy on lactame.com
+
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+jobs:
+  deploy:
+    # Documentation: https://github.com/zakodium/workflows#lactame-deploy
+    uses: zakodium/workflows/.github/workflows/lactame-deploy.yml@lactame-deploy-v1
+    secrets:
+      lactame-token: ${{ secrets.LACTAME_TOKEN }}

@@ -43,7 +43,7 @@ import {
 
 // ── DOM setup (required by react-tree-svg inside getFragmentationSVG) ───
 const dom = new JSDOM('<!DOCTYPE html><html><body></body></html>');
-globalThis.document = dom.window.document as unknown as Document;
+globalThis.document = dom.window.document;
 globalThis.window = dom.window as unknown as Window & typeof globalThis;
 Object.defineProperty(globalThis, 'navigator', {
   value: dom.window.navigator,
@@ -191,8 +191,7 @@ function findPrecursorNodes(
 function collectDescendantNodes(node: TreeNode): TreeNode[] {
   const nodes: TreeNode[] = [];
   for (const child of node.children ?? []) {
-    nodes.push(child);
-    nodes.push(...collectDescendantNodes(child));
+    nodes.push(child, ...collectDescendantNodes(child));
   }
   return nodes;
 }
@@ -264,7 +263,7 @@ function assignUidsAndBuildMaps(trees: TreeNode[]) {
 
     if (parentUid !== null) {
       parentMap.set(uid, parentUid);
-      childrenMap.get(parentUid)!.add(uid);
+      childrenMap.get(parentUid)?.add(uid);
     }
 
     for (const child of node.children ?? []) {
@@ -292,7 +291,9 @@ function getAncestorPath(
   const path: number[] = [uid];
   let current = uid;
   while (parentMap.has(current)) {
-    current = parentMap.get(current)!;
+    const parent = parentMap.get(current);
+    if (parent === undefined) break;
+    current = parent;
     path.unshift(current);
   }
   return path;
@@ -325,9 +326,9 @@ function verifyFilteredTree(
 
   // Walk filtered tree, verify each parent→child edge.
   function walkFiltered(node: TreeNode, parentNode: TreeNode | null): void {
-    const uid = node.uid!;
+    const uid = node.uid ?? -1;
     if (parentNode !== null) {
-      const parentUid = parentNode.uid!;
+      const parentUid = parentNode.uid ?? -1;
       const exists = originalChildrenMap.get(parentUid)?.has(uid) ?? false;
       edgeCount++;
       if (exists) {
@@ -348,19 +349,13 @@ function verifyFilteredTree(
     walkFiltered(root, null);
   }
 
-  lines.push('');
   lines.push(
+    '',
     `Edge summary: ${String(edgeCount)} edges, ${String(validEdges)} valid, ${String(invalidEdges)} INVALID`,
     '',
   );
 
-  // For each leaf node that matches an experimental peak, print ancestor path.
-  function collectLeaves(node: TreeNode): TreeNode[] {
-    if (!node.children || node.children.length === 0) return [node];
-    return node.children.flatMap(collectLeaves);
-  }
-
-  // Actually, print paths for ALL nodes that match an experimental peak
+  // Print paths for ALL nodes that match an experimental peak
   // (not just leaves — intermediate nodes can also match).
   const allFilteredNodes: TreeNode[] = [];
   function collectAll(node: TreeNode): void {
@@ -377,7 +372,7 @@ function verifyFilteredTree(
   const printedPeaks = new Set<number>();
 
   for (const node of allFilteredNodes) {
-    const uid = node.uid!;
+    const uid = node.uid ?? -1;
     const mz = node.molecules[0]?.info.mz ?? 0;
 
     // Check if this node matches an experimental peak.
@@ -443,8 +438,6 @@ for (const adductLabel of ionLabels) {
     reactions: Reactions;
   };
 
-  const allMasses = fragments.masses.map((m) => m.mz).toSorted((a, b) => a - b);
-
   // ── Assign UIDs to the original tree ──────────────────────────────
   const {
     parentMap: origParentMap,
@@ -476,7 +469,7 @@ for (const adductLabel of ionLabels) {
     continue;
   }
 
-  const precursorUids = new Set(precursorNodes.map((n) => n.uid!));
+  const precursorUids = new Set(precursorNodes.map((n) => n.uid ?? -1));
   console.log(
     `  Found ${String(precursorNodes.length)} precursor node(s) at ${String(PRECURSOR_MZ)}` +
       ` — UIDs: [${[...precursorUids].join(', ')}]`,

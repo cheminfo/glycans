@@ -1,7 +1,7 @@
 import { Molecule } from 'openchemlib';
 
 import type { Sugar } from '../Sugar.ts';
-import { sugarByIupacCondensed } from '../sugars.ts';
+import { iupacCondensedObject as sugarByIupacCondensed } from '../sugars.ts';
 
 import { labelUnitAtoms } from './labelUnitAtoms.ts';
 
@@ -13,14 +13,22 @@ const regex = new RegExp(
 
 // extend Sugar with Molecule
 export type SugarUnit = Sugar & {
-  molecule: Molecule;
+  molecule?: Molecule;
   id: number;
   ringSize: number;
   relativeStereoAtom: string;
 };
+export interface ParsedLink {
+  from: number;
+  to: number;
+  type: string;
+  part: string;
+  relativeStereoFrom?: string;
+}
+
 export interface ParsedIupacCondensed {
   units: SugarUnit[];
-  links: Array<{ from: number; to: number; type: string; part: string }>;
+  links: ParsedLink[];
 }
 
 export function parseIupacCondensed(iupac: string): ParsedIupacCondensed {

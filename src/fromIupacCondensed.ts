@@ -2,18 +2,26 @@ import { Molecule } from 'openchemlib';
 
 import type { Sugar } from './Sugar.ts';
 import { iupacCondensedObject, sugars } from './sugars.ts';
+
+interface IupacPart {
+  part: string;
+  isUnit?: boolean;
+  isLink?: boolean;
+  units?: Sugar;
+}
+
 /**
  * @see https://www.glycoforum.gr.jp/article/22A2.html#mokuji02
  * @param iupac
  */
-export function fromIupacCondensed(iupac: string): string {
-  const parts = getParts(iupac);
+export function fromIupacCondensed(iupac: string): Molecule {
+  getParts(iupac);
 
-  console.log(parts);
-  const mol = new Molecule();
+  const mol = new Molecule(0, 0);
+  return mol;
 }
 
-function getParts(iupac: string) {
+function getParts(iupac: string): IupacPart[] {
   const units = sugars.map((sugar: Sugar) => sugar.iupacCondensed);
   // sort by length to have the longest match first
   units.sort((a, b) => b.length - a.length);
@@ -23,13 +31,12 @@ function getParts(iupac: string) {
   const parts = iupac
     .split(regex)
     .filter(Boolean)
-    .map((part) => ({ part }));
+    .map((part): IupacPart => ({ part }));
   for (const part of parts) {
-    part.isUnit = iupacCondensedObject.hasOwnProperty(part.part);
+    part.isUnit = Object.hasOwn(iupacCondensedObject, part.part);
     part.isLink = !part.isUnit;
     if (part.isUnit) {
-      const unit = iupacCondensedObject[part.part];
-      part.units = unit;
+      part.units = iupacCondensedObject[part.part];
     }
   }
   return parts;

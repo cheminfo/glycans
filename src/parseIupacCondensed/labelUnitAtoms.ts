@@ -49,8 +49,7 @@ export function labelUnitAtoms(
     return { ringSize: 5, relativeStereoAtom: `${index}_4` };
   }
 
-  console.warn(
-    `No pentose or hexose fragment found in unit ${index} (${molecule.toSmiles()})`,
+  throw new Error(
+    `No pentose or hexose fragment found in unit ${index} (${molecule.toIsomericSmiles()})`,
   );
-  throw new Error('Unknown sugar unit');
 }

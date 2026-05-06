@@ -44,4 +44,7 @@ const fragments = reactionFragmentation(molecule, {
 
 const masses = fragments.masses.map((m) => m.mz).toSorted((a, b) => a - b);
 
-parentPort!.postMessage({ candidateName, label, masses });
+if (!parentPort) {
+  throw new Error('parentPort is null — not running in a worker thread');
+}
+parentPort.postMessage({ candidateName, label, masses });

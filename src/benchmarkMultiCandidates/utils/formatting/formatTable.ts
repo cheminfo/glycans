@@ -11,16 +11,19 @@
  * ```
  * @param headers - Column header labels.
  * @param rows - Array of row arrays (each row has the same length as headers).
+ * @param text
+ * @param width
  * @returns The formatted table as a multi-line string.
  */
+function pad(text: string, width: number): string {
+  return text + ' '.repeat(Math.max(0, width - text.length));
+}
+
 export function formatTable(headers: string[], rows: string[][]): string {
   // Compute the max width for each column.
   const widths = headers.map((h, col) =>
     Math.max(h.length, ...rows.map((row) => (row[col] ?? '').length)),
   );
-
-  const pad = (text: string, width: number): string =>
-    text + ' '.repeat(Math.max(0, width - text.length));
 
   // Box-drawing borders
   const topBorder = `┌${widths.map((w) => '─'.repeat(w + 2)).join('┬')}┐`;
