@@ -1,7 +1,10 @@
-import { Molecule } from 'openchemlib';
+import type * as OCLNamespace from 'openchemlib';
 
 import type { Sugar } from './Sugar.ts';
 import { iupacCondensedObject, sugars } from './sugars.ts';
+
+type OCLLibrary = typeof OCLNamespace;
+type Molecule = OCLNamespace.Molecule;
 
 interface IupacPart {
   part: string;
@@ -16,13 +19,16 @@ interface IupacPart {
  * Stub implementation kept for reference — see
  * `getMoleculeFromIupacCondensed` for the working version.
  * @see https://www.glycoforum.gr.jp/article/22A2.html#mokuji02
+ * @param OCL - The OpenChemLib library, passed in by the caller so this
+ *   package never imports `openchemlib` at runtime (avoids version
+ *   duplication).
  * @param iupac - IUPAC condensed glycan, e.g. `NeuAc(α2-3)Gal(β1-4)GlcNAc`.
  * @returns An (empty) molecule placeholder.
  */
-export function fromIupacCondensed(iupac: string): Molecule {
+export function fromIupacCondensed(OCL: OCLLibrary, iupac: string): Molecule {
   getParts(iupac);
 
-  const mol = new Molecule(0, 0);
+  const mol = new OCL.Molecule(0, 0);
   return mol;
 }
 

@@ -1,7 +1,10 @@
-import { Molecule } from 'openchemlib';
+import type * as OCLNamespace from 'openchemlib';
 
 import type { ParsedLink } from './parseIupacCondensed.ts';
 import { parseIupacCondensed } from './parseIupacCondensed.ts';
+
+type OCLLibrary = typeof OCLNamespace;
+type Molecule = OCLNamespace.Molecule;
 
 /**
  * Build an OpenChemLib `Molecule` from an IUPAC condensed glycan string.
@@ -10,13 +13,19 @@ import { parseIupacCondensed } from './parseIupacCondensed.ts';
  * ring position, and units are then connected via α/β glycosidic bonds at
  * the positions encoded in the link parts (e.g. `(α1-3)`). The displaced
  * anomeric oxygen is removed at every junction.
+ * @param OCL - The OpenChemLib library, passed in by the caller so this
+ *   package never imports `openchemlib` at runtime (avoids version
+ *   duplication).
  * @param iupac - IUPAC condensed glycan, e.g. `Glc(α1-3)Glc(β1-4)Glc`.
  * @returns The assembled molecule.
  */
-export function getMoleculeFromIupacCondensed(iupac: string): Molecule {
-  const parsed = parseIupacCondensed(iupac);
+export function getMoleculeFromIupacCondensed(
+  OCL: OCLLibrary,
+  iupac: string,
+): Molecule {
+  const parsed = parseIupacCondensed(OCL, iupac);
 
-  const molecule = new Molecule(0, 0);
+  const molecule = new OCL.Molecule(0, 0);
   for (const unit of parsed.units) {
     if (unit.molecule) molecule.addMolecule(unit.molecule);
   }
@@ -24,16 +33,16 @@ export function getMoleculeFromIupacCondensed(iupac: string): Molecule {
   molecule.inventCoordinates();
 
   for (const link of parsed.links) {
-    addBond(molecule, link);
+    addBond(molecule, link, OCL);
   }
 
-  molecule.ensureHelperArrays(Molecule.cHelperAll);
+  molecule.ensureHelperArrays(OCL.Molecule.cHelperAll);
   molecule.inventCoordinates();
 
   return molecule;
 }
 
-function addBond(molecule: Molecule, link: ParsedLink): void {
+function addBond(molecule: Molecule, link: ParsedLink, OCL: OCLLibrary): void {
   const parts = link.type.match(/([^\d]+)([0-9]+-[0-9]+)$/)?.slice(1);
   if (!parts) throw new Error(`Invalid link type: ${link.type}`);
 
@@ -56,35 +65,49 @@ function addBond(molecule: Molecule, link: ParsedLink): void {
     molecule,
     link.relativeStereoFrom,
   );
-  const relativeChirality = getChiralBondKind(molecule, relativeStereoFromAtom);
+  const relativeChirality = getChiralBondKind(
+    molecule,
+    relativeStereoFromAtom,
+    OCL,
+  );
 
   const bond = molecule.addBond(atom1, linkedOxygen2);
 
   if (type === 'alpha') {
     molecule.setBondType(
       bond,
-      Molecule.cBondTypeSingle |
-        (relativeChirality === Molecule.cBondTypeUp
-          ? Molecule.cBondTypeDown
-          : Molecule.cBondTypeUp),
+      OCL.Molecule.cBondTypeSingle |
+        (relativeChirality === OCL.Molecule.cBondTypeUp
+          ? OCL.Molecule.cBondTypeDown
+          : OCL.Molecule.cBondTypeUp),
     );
   } else {
-    molecule.setBondType(bond, Molecule.cBondTypeSingle | relativeChirality);
+    molecule.setBondType(
+      bond,
+      OCL.Molecule.cBondTypeSingle | relativeChirality,
+    );
   }
   molecule.deleteAtom(linkedOxygen1);
 }
 
-function getChiralBondKind(molecule: Molecule, atom: number): number {
+function getChiralBondKind(
+  molecule: Molecule,
+  atom: number,
+  OCL: OCLLibrary,
+): number {
   const nbConnected = molecule.getAllConnAtoms(atom);
   for (let i = 0; i < nbConnected; i++) {
     const connectedAtom = molecule.getConnAtom(atom, i);
     const bond = molecule.getBond(atom, connectedAtom);
     const bondType = molecule.getBondType(bond);
-    if ((bondType & Molecule.cBondTypeUp) === Molecule.cBondTypeUp) {
-      return bondType & Molecule.cBondTypeUp;
+    if ((bondType & OCL.Molecule.cBondTypeUp) === OCL.Molecule.cBondTypeUp) {
+      return bondType & OCL.Molecule.cBondTypeUp;
     }
-    if ((bondType & Molecule.cBondTypeDown) === Molecule.cBondTypeDown) {
-      return bondType & Molecule.cBondTypeDown;
+    if (
+      (bondType & OCL.Molecule.cBondTypeDown) ===
+      OCL.Molecule.cBondTypeDown
+    ) {
+      return bondType & OCL.Molecule.cBondTypeDown;
     }
   }
   throw new Error(`No chiral bond found for atom ${atom}`);

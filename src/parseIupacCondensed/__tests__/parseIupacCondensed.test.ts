@@ -1,9 +1,10 @@
+import * as OCL from 'openchemlib';
 import { expect, test } from 'vitest';
 
 import { parseIupacCondensed } from '../parseIupacCondensed.ts';
 
 test('Glc(β1-4)Glc maps smiles', () => {
-  const result = parseIupacCondensed('Glc(β1-4)Glc');
+  const result = parseIupacCondensed(OCL, 'Glc(β1-4)Glc');
 
   const smiles = result.units.map((unit) => unit.smiles);
 
@@ -14,7 +15,7 @@ test('Glc(β1-4)Glc maps smiles', () => {
 });
 
 test('NeuAc(α2-3)Gal(β1-4)GlcNAc', () => {
-  const result = parseIupacCondensed('NeuAc(α2-3)Gal(β1-4)GlcNAc');
+  const result = parseIupacCondensed(OCL, 'NeuAc(α2-3)Gal(β1-4)GlcNAc');
   for (const unit of result.units) {
     delete unit.molecule;
   }

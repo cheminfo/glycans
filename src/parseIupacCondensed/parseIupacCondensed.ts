@@ -1,9 +1,12 @@
-import { Molecule } from 'openchemlib';
+import type * as OCLNamespace from 'openchemlib';
 
 import type { Sugar } from '../Sugar.ts';
 import { iupacCondensedObject as sugarByIupacCondensed } from '../sugars.ts';
 
 import { labelUnitAtoms } from './labelUnitAtoms.ts';
+
+type OCLLibrary = typeof OCLNamespace;
+type Molecule = OCLNamespace.Molecule;
 
 // Sort by length descending so longer names like "GlcNAc" match before "Glc".
 const regex = new RegExp(
@@ -39,12 +42,18 @@ export interface ParsedIupacCondensed {
  * SMILES and labeled by `labelUnitAtoms`; each link captures the donor and
  * acceptor unit indices, the link part as written (e.g. `(α1-3)`), and the
  * relative-stereo reference atom from the donor unit.
+ * @param OCL - The OpenChemLib library, passed in by the caller so this
+ *   package never imports `openchemlib` at runtime (avoids version
+ *   duplication).
  * @param iupac - IUPAC condensed glycan, e.g. `Glc(α1-3)Glc(β1-4)Glc`.
  * @returns The parsed units and links, ready to be assembled into a single
  *   molecule.
  * @throws {Error} If a substring is not a known sugar unit.
  */
-export function parseIupacCondensed(iupac: string): ParsedIupacCondensed {
+export function parseIupacCondensed(
+  OCL: OCLLibrary,
+  iupac: string,
+): ParsedIupacCondensed {
   const parts = iupac.split(regex).filter(Boolean);
 
   const units = [];
@@ -64,7 +73,7 @@ export function parseIupacCondensed(iupac: string): ParsedIupacCondensed {
 
     const sugar = getSugar(part);
 
-    const molecule = Molecule.fromSmiles(sugar.smiles);
+    const molecule = OCL.Molecule.fromSmiles(sugar.smiles);
     const result = {
       id: index,
       ...labelUnitAtoms(molecule, index),
