@@ -1,7 +1,9 @@
-/**
- * My module
- * @returns A very important number
- */
-export function myModule(): number {
-  return 42;
-}
+export { getMoleculeFromIupacCondensed } from './parseIupacCondensed/getMoleculeFromIupacCondensed.ts';
+export {
+  type ParsedIupacCondensed,
+  type ParsedLink,
+  type SugarUnit,
+  parseIupacCondensed,
+} from './parseIupacCondensed/parseIupacCondensed.ts';
+export { iupacCondensedObject, sugars } from './sugars.ts';
+export type { Sugar } from './Sugar.ts';
