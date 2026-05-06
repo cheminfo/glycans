@@ -117,6 +117,7 @@ dist
 
 .DS_Store
 .claude
+package-lock.json
 
 lib
 scripts/icons/downloaded_icons/
