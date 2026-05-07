@@ -31,7 +31,7 @@
   "dependencies": {
     "mass-fragmentation": "^1.12.1",
     "ml-spectra-processing": "^14.28.1",
-    "openchemlib-utils": "^8.15.0"
+    "openchemlib-utils": "^8.15.1"
   },
   "peerDependencies": {
     "openchemlib": ">=9.20.1"
@@ -45,13 +45,13 @@
     "@zakodium/tsconfig": "^1.0.5",
     "eslint": "^9.39.2",
     "eslint-config-cheminfo-typescript": "^22.0.0",
-    "jcampconverter": "^12.3.1",
+    "jcampconverter": "^12.3.2",
     "jsdom": "^29.1.1",
     "ms-spectrum": "^3.10.1",
     "openchemlib": "^9.22.1",
     "papaparse": "^5.5.3",
     "prettier": "^3.8.3",
-    "puppeteer": "^24.42.0",
+    "puppeteer": "^24.43.0",
     "rimraf": "^6.1.3",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
