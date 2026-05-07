@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/cheminfo/glycans/compare/v0.2.0...v0.2.1) (2026-05-07)
+
+
+### Bug Fixes
+
+* bump openchemlib-utils to 8.15.1 ([51076bc](https://github.com/cheminfo/glycans/commit/51076bc0417b841562e4eaf76d2377474443c8f3))
+
 ## [0.2.0](https://github.com/cheminfo/glycans/compare/v0.1.0...v0.2.0) (2026-05-06)
 
 
